@@ -1,8 +1,9 @@
 ---
-layout: post
+comments: true
 title: "My first post"
 date: 2020-10-26 14:25:03 +1100
-categories: Life
+categories: blog
+permalink: /:categories/:title
 ---
 
 Welcome to my first post!

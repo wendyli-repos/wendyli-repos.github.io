@@ -18,11 +18,11 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Wendy Li's website
+title: Wendy Li
 email: testingemail@gmail.com
-description: >- # this means to ignore newlines until "baseurl:"
-  Welcome to my site.
-baseurl: "" # the subpath of your site, e.g. /blog
+# description: >- # this means to ignore newlines until "baseurl:"
+#   Welcome to my site.
+baseurl: "/" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 # twitter_username: jekyllrb
 github_username: wendyli-repos
@@ -32,7 +32,7 @@ author: Wendy Li
 # New field not defaulted by jekyll-new with the minima thme
 # Add a copyright. A copyright symbol and year will be added automatically
 # Copyright: Myname, Inc.
-copyright: "Wendy Li"
+copyright: "Copyright"
 title-logo: /images/title-logo.png
 
 # Build settings
@@ -40,6 +40,14 @@ title-logo: /images/title-logo.png
 # theme: minima
 plugins:
   - jekyll-feed
+
+# Applied default layout to all posts
+defaults:
+  - scope:
+      path: "_posts" # an empty string here means all files in the project
+      type: # optional if has already defined path
+    values:
+      layout: "post"
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to
