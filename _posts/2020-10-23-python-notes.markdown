@@ -1,7 +1,7 @@
 ---
-title: "Welcome to table!"
-date: 2020-10-27 14:21:03 +1100
-categories: blog
+title: "Python Notes"
+date: 2020-10-23 14:21:03 +1100
+categories: Python
 # use permalink to override the default url
 permalink: /:categories/:title
 ---

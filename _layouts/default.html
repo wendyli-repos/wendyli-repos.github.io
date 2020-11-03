@@ -1,23 +1,34 @@
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: site.lang | default: "en" }}">
+    {%- include head.html -%}
+    <body>
+        <div class="grid-container">
+        {%- include header.html -%}
+        <!-- <div class="wrapper"> -->
+            <div class="site-content">
+                {{ content }}
 
-  {%- include head.html -%}
+                <!-- {%- include home-content.html -%} -->
 
-  <body>
 
-    {%- include header.html -%}
+            </div>
+            <div class="site-categories">
+                <p>Categories</p>
+                    <div class="categories-expo-list">
+                        {% for category in site.categories %}
+                        <a href="#{{ category[0] | slugify }}" class="post-category">{{ category[0] | downcase }}</a>
+                        {% endfor %}
+                    </div>
+            </div>
+             <div class="site-contact">You have located my coordinates in the galaxy.
+                <div class="social-links">
+                    {%- include social.html -%}
+                </div>
+            </div>
+        <!-- </div> -->
 
-    <main class="page-content" aria-label="Content">
-      <div class="wrapper">
-        {{ content }}
-      </div>
-      <div class="side-bar">
-        <p>This is a sidebar</p>
-      </div>
-    </main>
-
-    {%- include footer.html -%}
-
-  </body>
+        {%- include footer.html -%}
+    </div>
+    </body>
 
 </html>

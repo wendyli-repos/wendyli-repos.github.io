@@ -1,10 +1,16 @@
 ---
-title: "Welcome to Jekyll!"
-date: 2020-10-27 14:21:03 +1100
-categories: blog
+title: "CSS Notes"
+date: 2020-10-25 14:21:03 +1100
+categories: CSS
 # use permalink to override the default url
 permalink: /:categories/:title
 ---
+
+| Tables   |      Are      |   Cool |
+| -------- | :-----------: | -----: |
+| col 1 is | left-aligned  | \$1600 |
+| col 2 is |   centered    |   \$12 |
+| col 3 is | right-aligned |    \$1 |
 
 Hello. You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
 

@@ -1,13 +1,22 @@
 ---
 layout: page
 title: Blog
-permalink: /Blog/
+permalink: /blog/
 ---
 
-A Ximalaya playlist downloader:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
+Show blog list
 
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
+blog date
+blog title
+some blog content
+
+<h1>Latest Posts</h1>
+
+<ul>
+  {% for post in site.posts %}
+    <li>
+      <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+      {{ post.excerpt }}
+    </li>
+  {% endfor %}
+</ul>
