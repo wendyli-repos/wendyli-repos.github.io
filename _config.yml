@@ -18,41 +18,26 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Galaxy.W.L
-email: testingemail@gmail.com
+title: Galaxy @ (W, L)
+email: your-email@example.com
 description: >- # this means to ignore newlines until "baseurl:"
-  You have located my coordinates in the galaxy.
+  Learning notes of Web Devlopment.
 baseurl: "/" # the subpath of your site, e.g. /blog
 url: "https://wendyli-repos.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
-# twitter_username: jekyllrb
+
 github_username: wendyli-repos
-linkedin_username: wendy-yang-l-12899283
+linkedin_username: yang-wendy-l-12899283/
 author: Wendy Li
 
-# New field not defaulted by jekyll-new with the minima thme
-# Add a copyright. A copyright symbol and year will be added automatically
-# Copyright: Myname, Inc.
+show_excerpts: true
 copyright: "© Copyright"
-title-logo: /images/title-logo.png
+title-logo: /images/my_avtar.jpeg
 
 # Build settings
-# Removed minima theme, now it is a regular theme
-# theme: minima
+theme: minima
 plugins:
   - jekyll-feed
 
-# Applied default layout to all posts
-defaults:
-  - scope:
-      path: "_posts" # an empty string here means all files in the project
-      type: # optional if has already defined path
-    values:
-      layout: "post"
-
-header_pages:
-  - blog.md
-  - portfolio.md
-  - about.md
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to
@@ -72,3 +57,11 @@ header_pages:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+
+header_pages:
+  - articles.md
+  - categories.md
+  - about.md
+
+paginate: 5
+paginate_path: "/page/:num/"

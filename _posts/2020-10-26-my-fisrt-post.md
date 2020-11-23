@@ -2,7 +2,7 @@
 title: "My first post"
 date: 2020-10-26 14:25:03 +1100
 categories: JS
-permalink: /:categories/:title
+# permalink: /:categories/:title
 ---
 
 Welcome to my first post!

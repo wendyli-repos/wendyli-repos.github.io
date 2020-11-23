@@ -1,27 +1,77 @@
 ---
 layout: default
 ---
-<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
+<article
+  class="post h-entry"
+  itemscope
+  itemtype="http://schema.org/BlogPosting"
+>
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
+    <h1 class="post-title p-name" itemprop="name headline">
+      {{ page.title | escape }}
+    </h1>
+
+    {% comment %} adding feature image to every post {% endcomment %}
+    {% if page.image %}
+      <img src="{{- page.image | relative_url -}}" alt="" class="feature-image">
+    {% else %}
+      {% assign defaultImage = "/assets/images/default-image.jpg" %}
+      <img src="{{- defaultImage | relative_url -}}" alt="" class="feature-image">
+    {% endif %}
+
     <p class="post-meta">
-      <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
-        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-        {{ page.date | date: date_format }}
+      <time
+        class="dt-published"
+        datetime="{{ page.date | date_to_xmlschema }}"
+        itemprop="datePublished"
+      >
+        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y"
+        -%} {{ page.date | date: date_format }}
       </time>
-      {%- if page.author -%}
-        • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ page.author }}</span></span>
-      {%- endif -%}</p>
+      {%- if page.author -%} •
+      <span itemprop="author" itemscope itemtype="http://schema.org/Person"
+        ><span class="p-author h-card" itemprop="name"
+          >{{ page.author }}</span
+        ></span
+      >
+      {%- endif -%}
+
+      {% comment %} Adding reading time {% endcomment %}
+      <span class="post-readingtime">
+        {% capture words %} {{ page.content | number_of_words | minus: 120 }} {%
+        endcapture %} {% unless words contains "-" %} {% assign minutes = words
+        | plus: 120 | divided_by: 120 %} {{ minutes }} {% if minutes <= 1 %} {{
+        " minute to read" }} {% else %} {{ " minutes to read" }} {% endif %}
+        {% endunless %}
+      </span>
+
+    </p>
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    {{ content }}
+  {{ content }}
   </div>
 
-  {%- if site.disqus.shortname -%}
-    {%- include disqus_comments.html -%}
-  {%- endif -%}
+{% comment %} adding previous and next post link, adding conditions {% endcomment %}
+  <div class="PageNavigation">
+  {% if page.previous.url %}
+    <a class="prev" href="{{page.previous.url}}">Previous Post: &laquo; {{page.previous.title}}</a>
+  {% else %}
+    <span class="prev">This is the first post.</span>
+  {% endif %}
+  {% if page.next.url %}
+    <a class="next" href="{{page.next.url}}">Next Post: {{page.next.title}} &raquo;</a>
+   {% else %}
+    <span class="next">This is the last post.</span>  
+  {% endif %}
+
+</div>
+
+
+
+  {%- if site.disqus.shortname -%} {%- include disqus_comments.html -%} {%-
+  endif -%}
 
   <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
 </article>

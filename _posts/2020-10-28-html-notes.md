@@ -1,9 +1,9 @@
 ---
-title: "CSS Notes"
-date: 2020-10-25 14:21:03 +1100
-categories: CSS
+title: "HTML notes"
+date: 2020-10-28 14:21:03 +1100
+categories: HTML
 # use permalink to override the default url
-permalink: /:categories/:title
+# permalink: /:categories/:title
 ---
 
 | Tables   |      Are      |   Cool |

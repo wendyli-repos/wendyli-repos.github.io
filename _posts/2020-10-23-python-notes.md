@@ -1,9 +1,9 @@
 ---
-title: "Notes jekyll!"
-date: 2020-10-29 14:21:03 +1100
-categories: Jekyll
+title: "Python Notes"
+date: 2020-10-23 14:21:03 +1100
+categories: Python
 # use permalink to override the default url
-permalink: /:categories/:title
+# permalink: /:categories/:title
 ---
 
 | Tables   |      Are      |   Cool |
