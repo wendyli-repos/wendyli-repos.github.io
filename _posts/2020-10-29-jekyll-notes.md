@@ -15,3 +15,4 @@ Some jekyll tips that I found online.
 4. [Add featured images to Jekyll posts (Part 1)](https://www.youtube.com/watch?v=6oKO-7gsM4s){:target="\_blank"}
 5. [Separate pages per tag/category with Jekyll (without plugins)](https://christianspecht.de/2014/10/25/separate-pages-per-tag-category-with-jekyll-without-plugins/){:target="\_blank"}
 6. [How to generate a list of category and tags in jekyll](https://hyunyoung2.github.io/2016/12/17/Category_And_Tags_In_Jekyll/){:target="\_blank"}
+7. [How to add a newsletter to a Jekyll blog](https://medium.com/@davideiaiunese/the-problem-why-a-newsletter-baae4409a526){:target="\_blank"}
