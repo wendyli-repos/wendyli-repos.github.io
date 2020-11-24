@@ -15,7 +15,7 @@ image: /assets/images/django-logo.png
 	- admin()
 
 # Create the Polls app  
-1.  `cd` into the same directory as your manage.py file. Type this command to create an app, the app name is `pools`.  
+1.  `cd` into the same directory as your manage.py file. Type this command to create an app, the app name is `polls`.  
     ```
     $ cd [to the project folder]
     $ python manage.py startapp polls
@@ -52,4 +52,8 @@ image: /assets/images/django-logo.png
 5.	Activate the server, then visit `http://127.0.0.1:8000/polls/` to view the sentence "Hello, world. You're at the polls index."
 
 
-Reference: [Writing your first Django app, part 1](https://docs.djangoproject.com/en/3.1/intro/tutorial01/){:target="\_blank"}
+Reference: 
+1. [Writing your first Django app, part 1](https://docs.djangoproject.com/en/3.1/intro/tutorial01/){:target="\_blank"}
+2. [django.urls functions for use in URLconfs](https://docs.djangoproject.com/en/3.1/ref/urls/){:target="\_blank"}
+3. [Request and response objects](https://docs.djangoproject.com/en/3.1/ref/request-response/){:target="\_blank"}
+4. [contrib packages](https://docs.djangoproject.com/en/3.1/ref/contrib/){:target="\_blank"}

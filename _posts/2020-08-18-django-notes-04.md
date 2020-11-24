@@ -1,55 +1,105 @@
 ---
-title: "Django Notes 04 - Setup Database"
+title: "Django Notes 04 - Setup Database, Timezone, Models, Admin"
 date: 2020-08-18
 categories: Django
 image: /assets/images/django-logo.png
 # permalink: /:categories/:title
 ---
-# Packages and functions used 
-- django.http
-	- HttpResponse()
-- django.urls
-	- path(route, view [, kwargs, name])
-	- include()
-- django.contrib
-	- admin()
+# Packages and functions mentioned/used 
+- DATABASES
+- TIME_ZONE
+- makemigrations
+- sqlmigrate
+- migrate
+- django.db
+	- models
+	- models.Model
+	- models.CharField()
+	- models.DateTimeField()
+	- models.ForeignKey()
+	- models.IntegerField()
+- datatime
+- django.utils
+	- timezone
+- django.contrib 
+	- admin
+	- admin.site.register()
 
-# Create the Polls app  
-1.  `cd` into the same directory as your manage.py file. Type this command to create an app, the app name is `pools`.  
-    ```
-    $ cd [to the project folder]
-    $ python manage.py startapp polls
-    ```  
-> Note: Different between project and app  
-2. Write a view of the `polls` app, open the polls/views.py file then added below code.  
+# Modify setting.py   
+1.	Change `DATABASE` used if needed. Default db is SQLite.  
+2. 	Change `TIME_ZONE` if needed. Default timezone is 'UTC'.  
+3.	Adding the `polls` app inside `INSTALLED_APPS` by adding below line. `PollsConfig` is found inside the `app.py` file inside the app folder.  
 	```
-	from django.http import HttpResponse
+	'polls.apps.PollsConfig',
+	```
 	
-	def index(request):
-    return HttpResponse("Hello, world. You're at the polls index.")
+# SQlite CLI 
+1.  `cd` into the directory where there is a `db.sqlite3` file. This file is a SQLite database file. Type this command to enter into the `sqlite>` prompt.  
     ```
-3.	To call this view, we will need map it to a URL - and for this we need a URLconf. To create a URLconf in the polls directory, create a file called urls.py.  
+    $ cd [to the folder where db.sqlite3 resides]
+    $ sqlite3
+    $ sqlite>			# terminal will prompt this
+    $ sqlite> .schema	# to view database 
+    ```  
+2.	Press `Control` + `D` to exit 
+
+# Create models (databases) in Django
+1.	Edit the polls/models.py file so it looks like this:
 	```
-	from django.urls import path
-	from . import views
+	from django.db import models
 
-	urlpatterns = [
-    	path('', views.index, name='index'),
-	]
+	class Question(models.Model):
+    	question_text = models.CharField(max_length=200)
+    	pub_date = models.DateTimeField('date published')
+
+	class Choice(models.Model):
+    	question = models.ForeignKey(Question, on_delete=models.CASCADE)
+    	choice_text = models.CharField(max_length=200)
+    	votes = models.IntegerField(default=0)
 	```
-4.	The next step is to point the root URLconf at the polls.urls module. [Namely to include any urls inside an app to the project that the app resides.] In mysite/urls.py, add an import for django.urls.include and insert an include() in the urlpatterns list, so you have:
+> Note: each model is represented by a class that subclasses django.db.models.Model
+> Note: Each field is represented by an instance of a Field class – e.g., CharField for character fields and DateTimeField for datetimes. This tells Django what type of data each field holds.
+
+2. Create correspondence databases [the purpose of this command is like a pre-process of the database queries] 
 	```
-	from django.contrib import admin
-	from django.urls import include, path
-
-	urlpatterns = [
-    	path('polls/', include('polls.urls')),
-    	path('admin/', admin.site.urls),
-	]
+	$ python manage.py makemigrations polls
 	```
-> Note: Can substitue 'polls/' inside the `path()` with any url that is relevant to the site design. 
+	
+3.	To review what migrations have completed as SQLite queries. 
+	```
+	$ python manage.py sqlmigrate polls 0001
+	```
+> Note: Good habit to run the above after makemigrations to ensure SQL queries are as what  they are intended to do.  
 
-5.	Activate the server, then visit `http://127.0.0.1:8000/polls/` to view the sentence "Hello, world. You're at the polls index."
+4.	Tips: can also run below to check if any problems.
+	```
+	$ python manage.py sqlmigrate polls 0001
+	```  
+	
+5. 	Create Database  
+	```
+	$ python manage.py migrate
+	```  
+
+# Playing with the API  
+Inside the shell, I can access object properties, refer to this link [Related objects reference](https://docs.djangoproject.com/en/3.1/ref/models/relations/)
+1.	Start a Python interactive shell  
+	```
+	$ python manage.py shell
+	```
+	
+2.	Exit the shell by pressing `Control` + `D`  
+
+# Django Admin  
+1.	Create an admin user  
+	```
+	$ python manage.py createsuperuser
+	```  
+	
+2.	Follow prompts to set `username`, `email` and `password`.  
+
+3.	Run server then visit `.../admin/` to log into the admin portal.
 
 
-Reference: [Writing your first Django app, part 1](https://docs.djangoproject.com/en/3.1/intro/tutorial01/){:target="\_blank"}
+Reference:   
+1. [how-to-set-the-timezone-in-django](https://stackoverflow.com/questions/29311354/how-to-set-the-timezone-in-django){:target="\_blank"}
