@@ -5,6 +5,7 @@ categories: Jekyll
 # use permalink to override the default url
 # permalink: /:categories/:title
 image: /assets/images/jekyll-logo-dark-solid.png
+comments: true
 ---
 A post to record some learning notes of Jekyll Minima Theme.
 
