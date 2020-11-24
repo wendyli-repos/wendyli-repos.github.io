@@ -99,7 +99,14 @@ Inside the shell, I can access object properties, refer to this link [Related ob
 2.	Follow prompts to set `username`, `email` and `password`.  
 
 3.	Run server then visit `.../admin/` to log into the admin portal.
+4.	After login `Admin` portal, the `superuser` can edit databases. But before that, databases will need to register in `polls/admin.py` file.  
+	```
+	from .models import Question
+	from .models import Choice
 
+	admin.site.register(Question)
+	admin.site.register(Choice)
+	```
 
 Reference:   
 1. [how-to-set-the-timezone-in-django](https://stackoverflow.com/questions/29311354/how-to-set-the-timezone-in-django){:target="\_blank"}

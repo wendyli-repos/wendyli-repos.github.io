@@ -1,13 +1,12 @@
 ---
-title: "Jekyll Theme - Minina Notes"
+title: "Anatomy of an Jekyll Minina Theme "
 date: 2020-10-30 14:21:03 +1100
 categories: Jekyll
-# use permalink to override the default url
-# permalink: /:categories/:title
+permalink: /:categories/:title
 image: /assets/images/jekyll-logo-dark-solid.png
-comments: true
+# comments: true
 ---
-A post to record some learning notes of Jekyll Minima Theme.
+A post to disassemble the Jekyll Minima Theme, from style to logic. 
 
 # Style
 1. base.scss  

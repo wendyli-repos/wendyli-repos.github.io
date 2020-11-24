@@ -3,7 +3,7 @@ title: "Django Notes 01 - Setting up Django environment"
 date: 2020-08-15
 categories: Django
 image: /assets/images/python-venv.png
-# permalink: /:categories/:title
+permalink: /:categories/:title
 ---
 
 ### Create Python venv in VS Code and install Django
