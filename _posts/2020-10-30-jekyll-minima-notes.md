@@ -1,5 +1,5 @@
 ---
-title: "Anatomy of an Jekyll Minina Theme "
+title: "Anatomy of Jekyll Minina Theme"
 date: 2020-10-30 14:21:03 +1100
 categories: Jekyll
 image: /assets/images/jekyll-logo-dark-solid.png
@@ -20,7 +20,7 @@ font-kerning: normal;
 
 
 
-
+***
 Reference:  
 1. [What does -moz-font-feature-settings: 'kern' do?
 ](https://stackoverflow.com/questions/45311518/what-does-moz-font-feature-settings-kern-do){:target="\_blank"}

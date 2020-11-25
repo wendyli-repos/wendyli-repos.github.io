@@ -11,7 +11,7 @@ There are two sections of the procedure. First section [Step 1 - 5] is to set up
 1.  Create a project folder, where the virtual env and Django project will reside. such as `django_project`.
 2.  `cd` into `django_project`, then to create a virtual environment named `django_env` inside `django_project` by running below command.
 
-    ```
+    ```sh
     $ cd django_project
     $ sudo apt-get install python3-venv # If needed
     $ python3 -m venv django_env
@@ -21,26 +21,26 @@ There are two sections of the procedure. First section [Step 1 - 5] is to set up
     Method 1: In VS Code, choose the installed virtual environment `django_env` as the python interpreter, then open a new bunit-in terminal, then install Django as Step 4.  
     Method 2: In Mac terminal, active the installed virtual environment first, then install Django as Step 4.
 
-    ```
+    ```sh
     $ cd django_env
     $ source bin/activate
     ```
 
 4.  Install Django in the virtual environment by running.
 
-    ```
+    ```sh
     $ pip install django
     ```
 
 5.  Check if Django is installed successfully. If returns Django version then means installation is completed.
 
-    ```
+    ```sh
     $ python -m pip install django
     ```
 
 6.  To create a django project inside the `django_project` folder; `django_blog_project` is the project name, after this command is executed, a django_blog_project will be created, refer to next section. 
 
-    ```
+    ```sh
     # make sure virtual env is activated
     # make sure you are in the `django_project` folder
     $ cd django_project
@@ -49,7 +49,7 @@ There are two sections of the procedure. First section [Step 1 - 5] is to set up
 
 7.  To run server; ensure to run this command in the manage.py directory.
 
-    ```
+    ```sh
     $ cd django_blog_project
     $ python manage.py runserver
     ```
@@ -59,6 +59,8 @@ There are two sections of the procedure. First section [Step 1 - 5] is to set up
 9.	To stop the server, press `Control` + `C` on Mac.
 
 10. To deactivate virtual environment in Mac terminal.
-    `$ deactivate`
+    `$ deactivate`  
 
-Reference: [Django Tutorial in Visual Studio Code](https://code.visualstudio.com/docs/python/tutorial-django){:target="\_blank"}
+***
+Reference: 
+1. [Django Tutorial in Visual Studio Code](https://code.visualstudio.com/docs/python/tutorial-django){:target="\_blank"}

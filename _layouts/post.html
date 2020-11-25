@@ -15,7 +15,6 @@ layout: default
     {% comment %} adding feature image to every post {% endcomment %}
     {% if page.image %}
       <img src="{{- page.image | relative_url -}}" alt="" class="feature-image">
-      <p class="wp-caption-text">Source: medium.com</p>
     {% else %}
       {% assign defaultImage = "/assets/images/default-image.jpg" %}
       <img src="{{- defaultImage | relative_url -}}" alt="" class="feature-image">

@@ -19,27 +19,27 @@ image: /assets/images/django-logo.png
 	- HttpResponse
 	- Http404
 
-# What is `views`?  
+
+# What is view  
 In Django, web pages and other content are delivered by views. Each view is represented by a Python function (or method, in the case of class-based views). Django will choose a view by examining the URL that’s requested (to be precise, the part of the URL after the domain name).  
    
    
-# How to show views?  
-Every view function (or method) will need to be wired to `urls.py` to show. Inside `urls.py`, adding path() of each view as an element of the `urlpatterns` list. The procedure is to load a template -> fill a context -> return an HttpResponse. As it is so common that Django provided a shortcut render() function to handle this procedure.    
-
+# How to show views
+Every view function (or method) will need to be wired to `urls.py` to show. Inside `urls.py`, adding path() of each view as an element of the `urlpatterns` list. The procedure is to load a template -> fill a context -> return an `HttpResponse`. As it is so common that Django provided a shortcut `render()` function to handle this procedure.    
 > Note: The `%s` inside the string is a placeholder, indicating that whatever after the `%` will replace the `%s` inside the string.  
 
 
 # The basic purpose of views  
 Each view is responsible for doing one of two things: returning an `HttpResponse` object containing the content for the requested page, or raising an exception such as `Http404`. The rest is up to you.  
-> Note: View can do anything using different libraires; but each view must have return HttpResponse. Or an exception.  
+> Note: View can do anything using different libraires; but each view must have `return HttpResponse()` or an exception.  
 
 
 # Generate different views using templates  
 1.	Create a `templates` folder inside the app folder `mysite/polls/`.  
-2. 	Create a `polls` folder inside `mysite/polls/tempaltes`.
+2. 	Create a `polls` folder inside `mysite/polls/tempaltes`.  
 3. 	Create an `index.html` inside `mysite/polls/tempaltes/polls/`. This html file will be rendered as the `template` of `index view`. Using DTL (similar to `Liquid`) to create the html template like below. 
-	```
-	# mysite/polls/tempaltes/polls/index.html
+	```py
+	# mysite/polls/tempaltes/polls/index.html  {% raw %}
 	{% if latest_question_list %}
         <ul>
             {% for q in latest_question_list %}
@@ -48,11 +48,11 @@ Each view is responsible for doing one of two things: returning an `HttpResponse
         </ul>
     {% else %}
         <p>No polls are available.</p>
-    {% endif %}
+    {% endif %}   {% endraw %}
 	```
-> Note: The 'latest_question_list' variable in the above template references to the `key` of the `context` dictionary defined inside the `index view` function.   
-4.	The below code loads the template called `polls/index.html` and passes it a `context`. The `context` is a dictionary mapping template variable names to Python objects. 
-	```
+> Note: The `latest_question_list` variable in the above template references to the `key` of the `context` dictionary defined inside the `index() view` function.   
+4.	Below code loads the template called `polls/index.html` and passes it a `context`. The `context` is a dictionary mapping template variable names to Python objects. 
+	```py
 	# views.py - return HttpResponse syntax
 	def index(request):
     latest_question_list = Question.objects.order_by('-pub_date')[:5]
@@ -64,7 +64,7 @@ Each view is responsible for doing one of two things: returning an `HttpResponse
 	```  
 The above can be rewritten using `render()`. The `render()` function takes the request object as its first argument, a template name as its second argument and a dictionary as its optional third argument. 
 It returns an HttpResponse object of the given template rendered with the given context.  
-	```
+	```py
 	# views.py - render() syntax
 	def index(request):
     latest_question_list = Question.objects.order_by('-pub_date')[:5]
@@ -74,7 +74,7 @@ It returns an HttpResponse object of the given template rendered with the given 
 
 # Raising a 404 error  
 Inside each view function, we should handle `404 error` before render the correspondence template.  
-```
+```py
 def detail(request, question_id):
     try:
         question = Question.objects.get(pk=question_id)
@@ -84,26 +84,26 @@ def detail(request, question_id):
     return render(request, 'polls/detail.html', context)
 ```
 The above code can be rewritten using `get_object_or_404()`  
-```
+```py
 def detail(request, question_id):
     question = get_object_or_404(Question, pk=question_id)
     context = {'question': question}
     return render(request, 'polls/detail.html', context)
 ```
-> Note: The name of get_object_or_404() is quite self-explanatory. If can get the object or a 404. object here means models class.
+> Note: The name of `get_object_or_404()` is quite self-explanatory. If can get the object or a 404. object here means models class.
 
 # More about template  
 To show data from different tables using foreign keys. Edited the `detail.html` template as per below.  
-``` 
-<h1>{{ question.question_text }}</h1>
-	<ul>
+```py
+<h1>{% raw %}{{ question.question_text }}{% endraw %}</h1>
+	<ul>{% raw %}
 	{% for choice in question.choice_set.all %}
     	<li>{{ choice.choice_text }}</li>
-	{% endfor %}
+	{% endfor %} {% endraw %}
 </ul>
 ```  
 The `question.choice_set` returns an iterable of `Choice` objects correspondencing to `Question` via a foreign key. The naming convention by Django is `foo_set`, this can be renamed using `related_name` attribute inside the `class Choice()` like below.
-```
+```py
 class Choice(models.Model):
 question = models.ForeignKey(
     Question, on_delete=models.CASCADE, related_name='choices')
@@ -115,21 +115,21 @@ def __str__(self):
 ```  
 
 # Remove hardcoded `url` in template  
-Using the `{\% url \%}` template tag to replace hardcoded urls inside tempalte. 
-```
-# hardcode urls like "/polls/{{ q.id }}"
-<li><a href="/polls/{{ q.id }}/">{{q.pub_date}} | {{ q.question_text }}</a></li>
+Using the `{% raw %}{% url %}{% endraw %}` template tag to replace hardcoded urls inside tempalte. 
+```py
+# hardcode urls, like "/polls/{% raw %}{{ q.id }}{% endraw %}"
+<li><a href="/polls/{% raw %}{{ q.id }}{% endraw %}/">{% raw %}{{q.pub_date}}{% endraw %} | {% raw %}{{ q.question_text }}{% endraw %}</a></li>
 
-# replaced with {\%  url 'name of the path' \%}
-<li><a href="{\% url 'detail' q.id \%}">{{q.pub_date}} | {{ q.question_text }}</a></li>
+# replaced with {% raw %}{%  url 'name of the path' %}{% endraw %}
+<li><a href="{% raw %}{% url 'detail' q.id %}{% endraw %}">{% raw %}{{q.pub_date}}{% endraw %} | {% raw %}{{ q.question_text }}{% endraw %}</a></li>
 ```  
 # Namespacing URL names  
 To differentiate the URL names between different apps. Adding `app_name` before `urlpatterns` inside `urls.py`.  
-```
+```py
 # polls/urls.py
 app_name = 'polls'
 ```  
-Then to prefix the `{\% url 'detail' question.id \%}` to `{\% url 'polls:detail' question.id \%}`. 
+Then to prefix the `{% raw %}{% url 'detail' question.id %}{% endraw %}` to `{% raw %}{% url 'polls:detail' question.id %}{% endraw %}`. So Diang will not confuse with templates with same names but reside in different app folders. 
 
 ***
 Reference:   
