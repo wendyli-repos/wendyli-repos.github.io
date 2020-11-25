@@ -2,7 +2,6 @@
 title: "JavaScript Notes"
 date: 2020-06-01
 categories: Javascript
-permalink: /:categories/:title
 ---
 Javascript
 1. let vs const 

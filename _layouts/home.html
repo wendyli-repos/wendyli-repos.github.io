@@ -27,11 +27,11 @@ layout: default
       <li>
         <span class="post-meta">{{ post.date | date: date_format }}</span>
         <span class="psot-meta">&num;{{ post.categories[0] | downcase }}</span>
-        <h3>
-          <a class="post-link" href="{{ post.url | relative_url }}">
-            {{ post.title | escape }}</a>
+        <h1>
+          {{ post.title | escape }}
         </h3>
         {%- if site.show_excerpts -%} {{ post.excerpt }} {%- endif -%}
+        <a class="post-link" href="{{ post.url | relative_url }}">> Read More</a>
       </li>
       {%- endfor -%}
     </ul>

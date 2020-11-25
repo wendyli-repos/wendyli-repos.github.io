@@ -3,7 +3,6 @@ title: "Django Notes 03 - Create a Django App"
 date: 2020-08-17
 categories: Django
 image: /assets/images/django-logo.png
-# permalink: /:categories/:title
 ---
 # Packages and functions used 
 - django.http

@@ -2,8 +2,6 @@
 title: "Jekyll Notes"
 date: 2020-10-29 14:21:03 +1100
 categories: Jekyll
-# use permalink to override the default url
-# permalink: /:categories/:title
 image: /assets/images/jekyll-logo-dark-solid.png
 ---
 

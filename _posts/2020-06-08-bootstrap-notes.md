@@ -2,7 +2,6 @@
 title: "Bootstrap Notes"
 date: 2020-06-08
 categories: Bootstrap
-permalink: /:categories/:title
 ---
 
 # Linking in *.html files

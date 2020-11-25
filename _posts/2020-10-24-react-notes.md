@@ -2,8 +2,6 @@
 title: "React Notes"
 date: 2020-10-24 14:21:03 +1100
 categories: React
-# use permalink to override the default url
-# permalink: /:categories/:title
 ---
 
 ## Browser compatibility

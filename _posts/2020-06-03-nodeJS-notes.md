@@ -2,7 +2,6 @@
 title: "NodeJS Notes"
 date: 2020-06-03
 categories: NodeJS
-permalink: /:categories/:title
 ---
 
 Node is often described as having event-driven architecture.

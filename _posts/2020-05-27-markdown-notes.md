@@ -2,7 +2,6 @@
 title: "Markdown Notes"
 date: 2020-05-27
 categories: Markdown
-permalink: /:categories/:title
 ---
 
 ## VS Code Features

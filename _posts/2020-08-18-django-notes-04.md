@@ -3,7 +3,6 @@ title: "Django Notes 04 - Setup Database, Timezone, Models, Admin"
 date: 2020-08-18
 categories: Django
 image: /assets/images/django-logo.png
-# permalink: /:categories/:title
 ---
 # Packages and functions mentioned/used 
 - DATABASES

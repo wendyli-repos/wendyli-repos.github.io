@@ -2,9 +2,7 @@
 title: "Anatomy of an Jekyll Minina Theme "
 date: 2020-10-30 14:21:03 +1100
 categories: Jekyll
-permalink: /:categories/:title
 image: /assets/images/jekyll-logo-dark-solid.png
-# comments: true
 ---
 A post to disassemble the Jekyll Minima Theme, from style to logic. 
 

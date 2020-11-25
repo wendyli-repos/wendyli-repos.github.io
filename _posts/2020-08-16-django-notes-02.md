@@ -3,7 +3,6 @@ title: "Django Notes 02 - Django Basics"
 date: 2020-08-16
 categories: Django
 image: /assets/images/django-logo.png
-# permalink: /:categories/:title
 ---
 
 # Django Structure

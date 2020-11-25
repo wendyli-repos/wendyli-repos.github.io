@@ -2,7 +2,6 @@
 title: "Express Notes"
 date: 2020-06-04
 categories: Express
-permalink: /:categories/:title
 ---
 
 Express is a powerful but flexible Javascript framework for creating web servers and APIs. It can be used for everything from simple static file servers to JSON APIs to full production servers.

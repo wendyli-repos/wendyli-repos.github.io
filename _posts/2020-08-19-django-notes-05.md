@@ -3,7 +3,6 @@ title: "Django Notes 05 - Views, Templates, 404 Errors, Urls"
 date: 2020-08-19
 categories: Django
 image: /assets/images/django-logo.png
-permalink: /:categories/:title
 ---
 # Packages and functions mentioned/used 
 - URL dispatcher
@@ -19,8 +18,6 @@ permalink: /:categories/:title
 - filter() method of the model's manager
 	- HttpResponse
 	- Http404
-
-
 
 # What is `views`?  
 In Django, web pages and other content are delivered by views. Each view is represented by a Python function (or method, in the case of class-based views). Django will choose a view by examining the URL that’s requested (to be precise, the part of the URL after the domain name).  
@@ -77,27 +74,27 @@ It returns an HttpResponse object of the given template rendered with the given 
 
 # Raising a 404 error  
 Inside each view function, we should handle `404 error` before render the correspondence template.  
-	```
-	def detail(request, question_id):
+```
+def detail(request, question_id):
     try:
         question = Question.objects.get(pk=question_id)
     except Question.DoesNotExist:
         raise Http404("Question does not exist")
     context = {'question': question}
     return render(request, 'polls/detail.html', context)
-	```
+```
 The above code can be rewritten using `get_object_or_404()`  
-	```
-	def detail(request, question_id):
+```
+def detail(request, question_id):
     question = get_object_or_404(Question, pk=question_id)
     context = {'question': question}
     return render(request, 'polls/detail.html', context)
-	```
+```
 > Note: The name of get_object_or_404() is quite self-explanatory. If can get the object or a 404. object here means models class.
 
 # More about template  
 To show data from different tables using foreign keys. Edited the `detail.html` template as per below.  
-```
+``` 
 <h1>{{ question.question_text }}</h1>
 	<ul>
 	{% for choice in question.choice_set.all %}
@@ -106,34 +103,33 @@ To show data from different tables using foreign keys. Edited the `detail.html` 
 </ul>
 ```  
 The `question.choice_set` returns an iterable of `Choice` objects correspondencing to `Question` via a foreign key. The naming convention by Django is `foo_set`, this can be renamed using `related_name` attribute inside the `class Choice()` like below.
-	```
-	class Choice(models.Model):
-    question = models.ForeignKey(
-        Question, on_delete=models.CASCADE, related_name='choices')
-    choice_text = models.CharField(max_length=200)
-    votes = models.IntegerField(default=0)
+```
+class Choice(models.Model):
+question = models.ForeignKey(
+    Question, on_delete=models.CASCADE, related_name='choices')
+choice_text = models.CharField(max_length=200)
+votes = models.IntegerField(default=0)
 
-    def __str__(self):
-        return self.choice_text
-	```  
+def __str__(self):
+    return self.choice_text
+```  
 
-# Remove hardcoded url in template  
-Using the `{% url %}` template tag to replace hardcoded urls inside tempalte. 
-	```
-	# hardcode urls like "/polls/{{ q.id }}"
-	<!-- <li><a href="/polls/{{ q.id }}/">{{q.pub_date}} | {{ q.question_text }}</a></li> -->
-    
-    # replaced with {%  url 'name of the path' %}
-    <li><a href="{% url 'detail' q.id %}">{{q.pub_date}} | {{ q.question_text }}</a></li>
-      ```
+# Remove hardcoded `url` in template  
+Using the `{\% url \%}` template tag to replace hardcoded urls inside tempalte. 
+```
+# hardcode urls like "/polls/{{ q.id }}"
+<li><a href="/polls/{{ q.id }}/">{{q.pub_date}} | {{ q.question_text }}</a></li>
 
+# replaced with {\%  url 'name of the path' \%}
+<li><a href="{\% url 'detail' q.id \%}">{{q.pub_date}} | {{ q.question_text }}</a></li>
+```  
 # Namespacing URL names  
 To differentiate the URL names between different apps. Adding `app_name` before `urlpatterns` inside `urls.py`.  
-	```
-	# polls/urls.py
-	app_name = 'polls'
-	```  
-Then to prefix the `{% url 'detail' question.id %}` to `{% url 'polls:detail' question.id %}`. 
+```
+# polls/urls.py
+app_name = 'polls'
+```  
+Then to prefix the `{\% url 'detail' question.id \%}` to `{\% url 'polls:detail' question.id \%}`. 
 
 ***
 Reference:   

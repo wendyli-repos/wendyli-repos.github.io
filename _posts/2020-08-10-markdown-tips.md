@@ -2,7 +2,6 @@
 title: "Markdown Tips"
 date: 2020-08-10
 categories: Markdown
-permalink: /:categories/:title
 ---
 
 Some markdown tips that I found online.

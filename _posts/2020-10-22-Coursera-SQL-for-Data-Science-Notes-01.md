@@ -2,7 +2,6 @@
 title: "Coursera: SQL for Data Science Notes 01"
 date: 2020-11-03
 categories: SQL
-# permalink: /:categories/:title
 ---
 
 ### Relational Database Management System (DBMS)

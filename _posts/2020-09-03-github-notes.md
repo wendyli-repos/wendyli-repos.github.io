@@ -1,8 +1,7 @@
 ---
-title: "Github Notes"
+title: "Git Notes"
 date: 2020-09-03
-categories: Github
-# permalink: /:categories/:title
+categories: Git 
 ---
 
 # git command
