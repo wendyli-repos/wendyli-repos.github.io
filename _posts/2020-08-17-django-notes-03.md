@@ -4,31 +4,42 @@ date: 2020-08-17
 categories: Django
 image: /assets/images/django-logo.png
 ---
-# Packages and functions used 
-- django.http
-	- HttpResponse()
-- django.urls
-	- path(route, view [, kwargs, name])
-	- include()
-- django.contrib
-	- admin()
+# Commands, Files, Packages and Functions 
+- python manage.py startapp [appname]
+- views.py
+	- django.http
+		- HttpResponse()
+- urls.py
+	- django.urls
+		- path(route, view [, kwargs, name])
+		- include()
+	- urlpatterns
+	- django.contrib
+		- admin.site.urls
 
 # Create the Polls app  
-1.  `cd` into the same directory as your manage.py file. Type this command to create an app, the app name is `polls`.  
+<!--excerpt.start-->First, we need to get the skeleton of an app by create one.<!--excerpt.end-->
+1.  `cd` into the same directory as your manage.py file. Type this command to create an app, the app name is `polls`. This will create an app with some files. 
     ```sh
     $ cd [to the project folder]
     $ python manage.py startapp polls
     ```  
 > Note: Different between project and app  
-2. Write a view of the `polls` app, open the polls/views.py file then added below code.  
+
+To be able to see the app through the browser, we need to have a html page. Django will render `function views`  and/or `classed-based views` reside inside `views.py` to correspondence html. So we need to create a `view`. 
+2. Create a view of the `polls` app, open the `polls/views.py` file then added below code.  
 	```py
+	# polls/views.py
 	from django.http import HttpResponse
 	
 	def index(request):
     return HttpResponse("Hello, world. You're at the polls index.")
-    ```
-3.	To call this view, we will need map it to a URL - and for this we need a URLconf. To create a URLconf in the polls directory, create a file called urls.py.  
+    ```  
+    
+Now we have the `view` which is a page. Django needs to know where to find this page by means of `url`. So we need to map this view to a URL. 
+3.	To call this view, we will need map it to a URL - and for this we need a `URLconf`. To create a `URLconf` in the polls directory, create a file called `urls.py` and add below code. By doing this, Django knows where to find the `index` page inside the app `polls`. We also need to tell Django where is this `polls` app located inside our `mysite` project, refer to Point 4. 
 	```py
+	# polls/urls.py
 	from django.urls import path
 	from . import views
 
@@ -36,8 +47,10 @@ image: /assets/images/django-logo.png
     	path('', views.index, name='index'),
 	]
 	```
-4.	The next step is to point the root URLconf at the polls.urls module. [Namely to include any urls inside an app to the project that the app resides.] In mysite/urls.py, add an import for django.urls.include and insert an include() in the urlpatterns list, so you have:
+
+4.	This step is to include any app level urls to the project level urls. In `mysite/urls.py`, add below code:
 	```py
+	# mysite/urls.py
 	from django.contrib import admin
 	from django.urls import include, path
 

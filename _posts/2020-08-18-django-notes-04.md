@@ -1,12 +1,15 @@
 ---
-title: "Django Notes 04 - Database, Timezone, Models, Admin"
+title: "Django Notes 04 - setting.py File To Change Database, Timezone, Models, Admin"
 date: 2020-08-18
 categories: Django
 image: /assets/images/django-logo.png
 ---
-# Packages and functions mentioned/used 
-- DATABASES
-- TIME_ZONE
+# Commands, Files, Packages and Functions 
+- setting.py
+	- DATABASES
+	- TIME_ZONE
+	- STATIC_URL
+	- STATIC_ROOT
 - makemigrations
 - sqlmigrate
 - migrate
@@ -24,13 +27,21 @@ image: /assets/images/django-logo.png
 	- admin
 	- admin.site.register()
 
+<!--excerpt.start--> 
+Now we can see a page we created. We will need to change/add some info in the `setting.py` file to customize our application.<!--excerpt.end-->  
+
 # Modify setting.py   
-1.	Change `DATABASE` used if needed. Default db is SQLite.  
-2. 	Change `TIME_ZONE` if needed. Default timezone is 'UTC'.  
+1.	Change `DATABASE` used if needed. Default db is `'SQLite'`.  
+2. 	Change `TIME_ZONE` if needed. Default timezone is `'UTC'`.  
 3.	Adding the `polls` app inside `INSTALLED_APPS` by adding below line. `PollsConfig` is found inside the `app.py` file inside the app folder.  
 	```py
 	'polls.apps.PollsConfig',
 	```
+4. Adding below info for Django to load `static` files like CSS, images, etc. 
+```py
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+```
 	
 # SQlite CLI 
 1.  `cd` into the directory where there is a `db.sqlite3` file. This file is a SQLite database file. Type this command to enter into the `sqlite>` prompt.  

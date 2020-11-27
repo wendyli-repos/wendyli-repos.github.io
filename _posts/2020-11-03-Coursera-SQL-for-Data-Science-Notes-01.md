@@ -1,8 +1,10 @@
 ---
 title: "Coursera: SQL for Data Science Notes 01"
 date: 2020-11-03
-categories: SQL
+categories: SQLite
 ---
+<!--excerpt.start-->
+A post to record my learning notes of a SQLite course. <!--excerpt.end-->
 
 ### Relational Database Management System (DBMS)
 

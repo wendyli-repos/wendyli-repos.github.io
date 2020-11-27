@@ -4,6 +4,9 @@ date: 2020-08-23
 categories: Django
 image: /assets/images/django-logo.png
 ---
+<!--excerpt.start-->
+A post to record my learning notes of how to customize admin form a Django app. <!--excerpt.end-->
+
 # Packages and functions mentioned/used 
 - django.contrib
 	- admin

@@ -1,10 +1,12 @@
 ---
-title: "Django Notes 01 - Setting Up Django environment, Requirements.txt"
+title: "Django Notes 01 - Installing Django In Virtual Environment, Requirements.txt"
 date: 2020-08-15
 categories: Django
 image: /assets/images/python-venv.png
 ---
 
+<!--excerpt.start-->Django is a Python package, so we need to install before we can use it. It is preferred to install Django in a python virtual environment. <!--excerpt.end-->Below are notes of how to. 
+ 
 # Create Python venv in VS Code and install Django
 There are two sections of the procedure. First section [Step 1 - 5] is to set up a python virtual environment and install `Django` in this virtual environment. Second section [Step 6 - 9] is to create a `Django` project (e.g. like a blog project, website project, poll project, etc.); then run the server to check if everything is okay.
 
@@ -31,7 +33,7 @@ There are two sections of the procedure. First section [Step 1 - 5] is to set up
     ```sh
     $ pip install django
     ```
-> Note: Because this is only a demo project so I can just install Django. In real project, there maybe many packages needed to install. And Python has a shortcut to install all packages in one `pip` command, refer to below [What about requirements.txt](#What about requirements.txt). 
+> Note: Because this is only a demo project so I can just install Django. In real project, there maybe many packages needed to install. And Python has a shortcut to install all packages in one `pip` command, refer to below section [What about requirements.txt](#What about requirements.txt). 
 5.  Check if Django is installed successfully. If returns Django version then means installation is completed.
 
     ```sh
@@ -67,7 +69,7 @@ One way to install Django is as Point 4 above, the other shortcut is to install 
 ## Create a requirements.txt  
 There are two ways to create `requirements.txt` file. 
 
-### Method 1: To just create a text file named `requirements` at the same level of the virtual env. And put all packages and dependencies inside this text file. Something similar to below if Django is the only package to install at the time. 
+Method 1: To just create a text file named `requirements` at the same level of the virtual env. And put all packages and dependencies inside this text file. Something similar to below if Django is the only package to install at the time. 
 ```text
 Django~=2.2.4
 ```  
@@ -75,11 +77,11 @@ Then run below command inside the venv and Django 2.2.4 will be installed.
 ```sh
 $ pip3 install -r requirements.txt
 ``` 
-### Method 2 (preferred): The ultimate purpose of requirements.txt is to easily install all packages and dependencies on different machines. Python has a command to create `requirements.txt` automatically based on your current installations. Refer to below:
+Method 2 (preferred): The ultimate purpose of requirements.txt is to easily install all packages and dependencies on different machines. Python has a command to create `requirements.txt` automatically based on your current installations. This is usually done when the project is ready for publishment. Refer to below:
 ```sh
 $ pip3 freeze > requirements.txt.
 ```    
-It is also best practice to include a `requirements.txt` when publishing the project. 
+It is best practice to include a `requirements.txt` when publishing the project. 
 
  
 ***

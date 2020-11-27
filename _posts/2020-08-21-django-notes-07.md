@@ -3,7 +3,10 @@ title: "Django Notes 07 - Automated Testing"
 date: 2020-08-21
 categories: Django
 image: /assets/images/django-logo.png
----
+--- 
+<!--excerpt.start-->
+A post to record my learning notes of how to test a Django app. <!--excerpt.end-->
+
 # Packages and functions mentioned/used 
 - datetime
 	- datetime.timedelta()

@@ -3,7 +3,8 @@ title: "Git Notes"
 date: 2020-09-03
 categories: Git 
 ---
-
+<!--excerpt.start-->
+A post to record my learning notes of a git. <!--excerpt.end-->
 # git command
 
 [git clone](#git-clone)  

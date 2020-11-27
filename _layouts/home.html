@@ -3,18 +3,17 @@ layout: default
 ---
 
 <div class="home">
-
   {%- if page.title -%}
     <h1 class="page-heading">{{ page.title }}</h1>
   {%- endif -%} 
   
   {{ content }} 
   
-  {% if site.paginate %} 
+  {%- if site.paginate -%} 
     {% assign posts = paginator.posts %} 
-  {% else %} 
+  {%- else -%} 
     {% assign posts = site.posts %} 
-  {% endif %} 
+  {%- endif -%} 
   
   {%- if posts.size > 0 -%} 
     {%- if page.list_title -%}
@@ -25,32 +24,37 @@ layout: default
       {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
       {%- for post in posts -%}
       <li>
-        <span class="post-meta">{{ post.date | date: date_format }}</span>
-        <span class="psot-meta">&num;{{ post.categories[0] | downcase }}</span>
+        <span class="post-meta">{{ post.date | date: date_format }} • &num; {{ post.categories[0] | upcase }} </span> 
         <h1>
           {{ post.title | escape }}
-        </h3>
-        {%- if site.show_excerpts -%} {{ post.excerpt }} {%- endif -%}
-        <a class="post-link" href="{{ post.url | relative_url }}">> Read More</a>
+        </h1> 
+        {% comment %} Adding customized excerpt {% endcomment %}
+        <p class="post-excerpt">
+          {% if post.content contains '<!--excerpt.start-->' and post.content contains '<!--excerpt.end-->' %}
+            {% assign excerpt_start = post.content | split: '<!--excerpt.start-->' | last %}
+            {% assign excerpt_end = excerpt_start | split: '<!--excerpt.end-->' | first %}
+	          {{ excerpt_end | strip_html | truncatewords: 20 }}
+          {% else %}
+	          {{ post.content | strip_html | truncatewords: 20 }}
+          {% endif %}
+        </p>
+        <a class="next" href="{{ post.url | relative_url }}">&raquo; Read More</a>
       </li>
       {%- endfor -%}
     </ul>
 
     {% if site.paginate %}
-  <div class="pagination">
+      <div class="pagination">
     {% if paginator.previous_page %}
-      <a href="{{ paginator.previous_page_path }}" class="previous">&laquo; Previous</a>
+      <a href="{{ paginator.previous_page_path }}" class="previous">&laquo; Newer Posts</a>
     {% endif %}
-
-    <span class="page_number">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>
+      <span class="page_number">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>
 
     {% if paginator.next_page %}
-      <a href="{{ paginator.next_page_path }}" class="next">Next &raquo;</a>
+      <a href="{{ paginator.next_page_path }}" class="next">Older Posts &raquo;</a>
     {% endif %}
-  </div>
-  {% endif %}
-
-
+      </div>
+    {% endif %}
 
   {%- endif -%}
 </div>

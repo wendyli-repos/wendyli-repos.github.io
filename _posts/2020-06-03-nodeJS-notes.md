@@ -4,7 +4,7 @@ date: 2020-06-03
 categories: NodeJS
 ---
 
-Node is often described as having event-driven architecture.
+<!--excerpt.start-->Node is often described as having event-driven architecture.<!--excerpt.end-->
 
 ## Concepts
 

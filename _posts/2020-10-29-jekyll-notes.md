@@ -4,8 +4,9 @@ date: 2020-10-29 14:21:03 +1100
 categories: Jekyll
 image: /assets/images/jekyll-logo-dark-solid.png
 ---
-
-Some jekyll tips that I found online.
+<!--excerpt.start--> 
+A list of links of many jekyll tips that I found very helpful. <!--excerpt.end-->
+Clicking on the link will redirect you to external references. 
 
 1.  [adding pagination support](https://github.com/prashanthmadi/prashanthmadi.github.io/commit/d09b4351f0a8e34318847f14f854b5be2f06b4d6){:target="\_blank"}
 2.  [Adding 'Minutes to read' to your Jekyll blog](https://www.alexrodba.com/2016/04/24/adding-minutes-to-read-to-your-jekyll-blog/){:target="\_blank"}  
@@ -14,3 +15,7 @@ Some jekyll tips that I found online.
 5. [Separate pages per tag/category with Jekyll (without plugins)](https://christianspecht.de/2014/10/25/separate-pages-per-tag-category-with-jekyll-without-plugins/){:target="\_blank"}
 6. [How to generate a list of category and tags in jekyll](https://hyunyoung2.github.io/2016/12/17/Category_And_Tags_In_Jekyll/){:target="\_blank"}
 7. [How to add a newsletter to a Jekyll blog](https://medium.com/@davideiaiunese/the-problem-why-a-newsletter-baae4409a526){:target="\_blank"}
+8. [Word Counts and Reading Time in Jekyll](https://sacha.me/articles/jekyll-word-counts){:target="\_blank"}
+9. [HOW TO SHOW A SUMMARY OF YOUR POST WITH JEKYLL
+](http://frontendcollisionblog.com/jekyll/snippet/2015/03/23/how-to-show-a-summary-of-your-post-with-jekyll.html){:target="\_blank"}
+10. [Customising the Excerpt Separators in Jekyll](https://cjshelton.github.io/blog/2019/05/27/customising-jekyll-excerpt-start.html){:target="\_blank"}

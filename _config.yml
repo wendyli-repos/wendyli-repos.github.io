@@ -29,7 +29,6 @@ github_username: wendyli-repos
 linkedin_username: yang-wendy-l-12899283/
 author: Wendy Li
 
-show_excerpts: true
 copyright: "© Copyright Reserved All Rights for Contents"
 title-logo: /images/my_avtar.jpeg
 disqus:
@@ -65,5 +64,5 @@ header_pages:
   - categories.md
   - about.md
 
-paginate: 5
+paginate: 8
 paginate_path: "/page/:num/"

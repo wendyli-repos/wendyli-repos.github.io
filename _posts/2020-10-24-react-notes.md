@@ -3,7 +3,8 @@ title: "React Notes"
 date: 2020-10-24 14:21:03 +1100
 categories: React
 ---
-
+<!--excerpt.start--> 
+React is a front end web development library. This post is to record some notes of `React`.<!--excerpt.end--> 
 ## Browser compatibility
 
 ### Concepts

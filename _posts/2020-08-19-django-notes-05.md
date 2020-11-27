@@ -3,8 +3,9 @@ title: "Django Notes 05 - Views, Templates, 404 Errors, Urls"
 date: 2020-08-19
 categories: Django
 image: /assets/images/django-logo.png
----
-# Packages and functions mentioned/used 
+--- 
+
+# Commands, Files, Packages and Functions 
 - URL dispatcher
 - ROOT_URLCONF setting
 - TEMPLATES setting
@@ -21,7 +22,8 @@ image: /assets/images/django-logo.png
 
 
 # What is view  
-In Django, web pages and other content are delivered by views. Each view is represented by a Python function (or method, in the case of class-based views). Django will choose a view by examining the URL that’s requested (to be precise, the part of the URL after the domain name).  
+<!--excerpt.start--> In Django, web pages and other content are delivered by views.<!--excerpt.end-->
+Each view is represented by a Python function (or method, in the case of class-based views). Django will choose a view by examining the URL that’s requested (to be precise, the part of the URL after the domain name).  
    
    
 # How to show views

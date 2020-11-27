@@ -3,7 +3,7 @@ title: "JavaScript Notes"
 date: 2020-06-01
 categories: Javascript
 ---
-Javascript
+<!--excerpt.start-->Javascript<!--excerpt.end-->
 1. let vs const 
 2. typeof <variablename>
 	

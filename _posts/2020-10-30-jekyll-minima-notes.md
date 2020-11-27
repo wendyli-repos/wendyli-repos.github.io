@@ -4,7 +4,8 @@ date: 2020-10-30 14:21:03 +1100
 categories: Jekyll
 image: /assets/images/jekyll-logo-dark-solid.png
 ---
-A post to disassemble the Jekyll Minima Theme, from style to logic. 
+<!--excerpt.start-->
+A post to disassemble the Jekyll Minima Theme, from style to logic.<!--excerpt.end--> 
 
 # Style
 1. base.scss  

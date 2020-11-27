@@ -4,7 +4,7 @@ date: 2020-06-04
 categories: Express
 ---
 
-Express is a powerful but flexible Javascript framework for creating web servers and APIs. It can be used for everything from simple static file servers to JSON APIs to full production servers.
+<!--excerpt.start-->Express is a powerful but flexible Javascript framework for creating web servers and APIs. It can be used for everything from simple static file servers to JSON APIs to full production servers.<!--excerpt.end-->
 
 ## Concepts
 

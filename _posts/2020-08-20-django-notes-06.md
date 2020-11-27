@@ -22,8 +22,8 @@ image: /assets/images/django-logo.png
     - generic.DetailView
 
 # Forms
-
-Form is a very important part of web development and Django can handle form very well. This post is to create a voting form for each poll, submit the form and show the vote results.  
+<!--excerpt.start--> 
+Form is a very important part of web development and Django can handle form very well. This post is to create a voting form for each poll, submit the form and show the vote results.<!--excerpt.end-->  
 The logic is
 Step 1: show a vote form on poll detail page
 Step 2: submit the form using a post request to vote page - if nothing is voted, then show an error message and remain at the vote page
