@@ -35,8 +35,8 @@ Following the logic, we first need to add a `form` on the `detail.html` template
 <form action="{% raw %}{% url 'polls:vote' question.id %}{% endraw %}" method="post">
 {% raw %}{% csrf_token %}{% endraw %}
 {% raw %}{% for choice in question.choice_set.all %}{% endraw %}
-    <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}">
-    <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label><br>
+    <input type="radio" name="choice" id="choice{% raw %}{{ forloop.counter }}{% endraw %}" value="{% raw %}{{ choice.id }}{% endraw %}">
+    <label for="choice{% raw %}{{ forloop.counter }}{% endraw %}">{% raw %}{{ choice.choice_text }}{% endraw %}</label><br>
 {% raw %}{% endfor %}{% endraw %}
 <input type="submit" value="Vote">
 </form>
