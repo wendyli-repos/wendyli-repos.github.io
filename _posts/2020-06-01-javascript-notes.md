@@ -1,20 +1,175 @@
 ---
-title: "JavaScript Notes"
+title: "JavaScript Notes 01 - "
 date: 2020-06-01
 categories: Javascript
 ---
-<!--excerpt.start-->Javascript<!--excerpt.end-->
-1. let vs const 
-2. typeof <variablename>
-	
-3. Primitives/Value Types
-	String
-	Number
-	Boolean
-	undefiend
-	null
-4. References Types
+<!--excerpt.start-->Javascript is probably the origin of Web Development. Here are some notes of JavaScript. <!--excerpt.end-->
 
+2. typeof <variablename>
+
+
+
+
+# Concepts:
+
+1.	const vs let. 一旦一个 variable 用 const 定义后，这个 variable 就不能被赋予其他值或类型。但是可以对 const 进行修改、添加等操作。
+2.	let 定义的 variable 可以被赋值为其他变量。
+3.	Primitives/Value Types
+	- String
+	- Number
+	- Boolean
+	- undefiend
+	- null
+4.  References Types
+	- Array
+
+Objects Notes:
+
+1. factory fucntion to create object
+2. every object has a construtor property that refers to the function used to create that object.
+3. call()
+4. apply()
+5. primitive vs object type
+6. object is not iterable
+7. for in for object properties
+8. for of iterable like array or
+
+9. object constructor function 中的 this 指代创建的空 object{}，然后再把 function 里面的 parameter 赋值到空 array 里面给 function 的
+   parameter 的存储位置，因此出现 this.title = title; this.name = name; etc.
+
+Array Notes:
+
+1. valid array defination:
+   const numbers = [1, 2, 3, 5, { name: "s" }];
+2. map method
+3. splice method
+4. pop, push
+5. shift, unshift
+6. reduce (an arrow function)
+
+Function Notes:
+
+1. function declaration, no';" at the end
+   function walk() {
+   consoloe.log('walk');
+   }
+2. function expression
+   let run = function walk()
+   {
+   console.log('run');
+   };
+3. hoisting
+   can call function b4 it is created using function declaration method
+4. the rest operator ...args
+5. getters and setters
+   getter => access properties
+   setter => change (mutate) them
+6. change 'this' using _.call();
+   _.apply();
+   \*.bind();
+   or using arrow function which inherates the upper
+7. callback function
+
+OOP Notes:
+
+1.  prototypical inheritance. protytpe is namely parent.
+2.  2 methods to rewrite prototype inhertance relation
+    Method 1: intermediate function inhertance
+    function extend(Child, Parent) {
+    Child.prototype = Object.create(Parent.prototype); // line 1
+    Child.prototype.constructor = Child; // line 2
+    }
+    extend(Circle, Shape);
+
+    Method 2 :
+    rewrite line 1 & 2 for each inherated object.
+
+    Circle.prototype = Object.create(Shape.prototype);
+    Circle.prototype.constructor = Circle;
+
+    Square.prototype = Object.create(Shaoe.prototype);
+    Square.prototype.constructor = Square;
+
+3.  methold overwriting
+    duplicate() is inheratated from Shape object, but I'd like to rewrite this menthod's implementation in Circle object.
+    Circle.prototype.duplicate = function() {
+    /// new function implementation
+    }
+4.  polymorphism means one method that is inherated from the baseObject can have multiple implementation in different objects.
+    if you create an array with different objects inheratated fron the object base, then you can call this method directky as a menthod of the objectBase.
+5.  composition mixins, namely create different objects then combine them as requested
+6.  inheritance
+    // inheritance only prototype methods
+    HtmlSelectElememt.prototype = Object.create(HtmlElement.prototype);
+
+// inheritance the entire parent object
+HtmlSelectElememt.prototype = new HtmlElement();
+
+7. constructor also has prototype proterity which is the prototype that used to create that Object.
+8. instance members VS prototype members
+   define prototype members:
+   Circle.prototype.draw = function() {
+   console.log('draw');
+   }
+9. iterating instance and prototype members
+   Object.keys(c1); // can iterate all instance members
+
+   for (let key in c1) console.log(key); // can iterate all members (including instance and prototype members)
+
+   c1. hasOwnProperty('any instance members'); // will return true is parameter is any instance members.
+   // In JS, instance members are usually referred as own property
+
+10. super constructor to inherate prototype's property
+
+ES6 class Notes;
+
+1. class expression is not hoisted. Must declare class before.
+   // class expression
+   const Square = class {};
+   // class declaration, use this method to define class
+   class Circle {}
+2. instace method vs static method
+   instance method is availiale on the object
+   static parse(str) {} to create utility functions that are not tight to one object but the class itslef.
+3. this keyword - 'use strict' to prevent from modify window object.
+   const Circle = function() {
+   this.draw = function() {
+   console.log(this);
+   };
+   };
+
+const c = new Circle();
+// method call
+c.draw();
+
+const draw = c.draw;
+console.log(draw);
+// function call, stand along function, which is not part of an object
+draw();
+
+// the body of the class is using 'strict' mode
+class Circle {
+draw() {
+console.log(this);
+}
+}
+
+const c = new Circle();
+const draw = c.draw;
+draw();
+
+4. Private members using Symbol() three different approaches.
+   1st: using Symbol()
+   2nd: WeakMap()
+5. inheritance
+
+ES tools Notes:
+
+1. module formats
+   // AMD - brower application
+   CommonJS - Node.js
+   // UMD - Brower/ Node.js
+   ES6 Modules
 
 - **ES6 Class**
 
