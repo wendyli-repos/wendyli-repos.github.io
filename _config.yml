@@ -60,7 +60,7 @@ plugins:
 #   - vendor/ruby/
 
 header_pages:
-  - articles.md
+  - archieve.md
   - categories.md
   - about.md
 
