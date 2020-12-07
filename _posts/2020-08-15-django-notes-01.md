@@ -66,7 +66,7 @@ There are two sections of the procedure. First section [Step 1 - 5] is to set up
 # What about requirements.txt 
 One way to install Django is as Point 4 above, the other shortcut is to install all packages and dependencies using the `requirements.txt` file. 
 
-## Create a requirements.txt  
+# Create a requirements.txt  
 There are two ways to create `requirements.txt` file. 
 
 Method 1: To just create a text file named `requirements` at the same level of the virtual env. And put all packages and dependencies inside this text file. Something similar to below if Django is the only package to install at the time. 
