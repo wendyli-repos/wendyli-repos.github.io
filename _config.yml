@@ -32,7 +32,7 @@ author: Wendy Li
 copyright: "© Copyright Reserved All Rights for Contents"
 title-logo: /images/my_avtar.jpeg
 disqus:
-    shortname: mypersonalblog-ghp
+  shortname: mypersonalblog-ghp
 
 # Build settings
 theme: minima
@@ -63,6 +63,7 @@ header_pages:
   - archieve.md
   - categories.md
   - about.md
+  - tools.md
 
 paginate: 8
 paginate_path: "/page/:num/"

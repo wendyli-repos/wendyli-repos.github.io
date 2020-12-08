@@ -1,5 +1,5 @@
 ---
-title: "Django Notes 11 - User authentication and permissions"
+title: "Django Notes 12 - User authentication and permissions"
 date: 2020-08-26
 categories: Django
 image: /assets/images/django-logo.png
