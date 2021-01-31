@@ -11,7 +11,7 @@
             </svg><span>Subscribe</span>
           </a>
         </p>
-      {%- if site.author %}
+      <!-- {%- if site.author %}
         <ul class="contact-list">
           {% if site.author.name -%}
             <li class="p-name">{{ site.author.name | escape }}</li>
@@ -20,24 +20,30 @@
             <li><a class="u-email" href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></li>
           {%- endif %}
         </ul>
-      {%- endif %}
+      {%- endif %} -->
       </div>
 
-      <div class="footer-col">
+      <form style="border:1px solid #ccc;padding:3px;text-align:center;" action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('https://feedburner.google.com/fb/a/mailverify?uri=GalaxywL', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true"><p>Enter your email address:</p><p><input type="text" style="width:140px" name="email"/></p><input type="hidden" value="GalaxywL" name="uri"/><input type="hidden" name="loc" value="en_US"/><input type="submit" value="Subscribe" /><p>Delivered by <a href="https://feedburner.google.com" target="_blank">FeedBurner</a></p></form>
+
+      <!-- <div class="footer-col">
         <p>{{ site.description | escape }}</p>
+      </div> -->
+
+      <!-- <div class="footer-col">
+        contact-list
+      </div> -->
+
+      <div class="social-media-list">
+        {%- include social.html -%}
       </div>
 
       <div class="footer-col">
-      <div class="social-links">
-        {%- include social.html -%}
-      </div> 
+        {{ site.copyright }} 
+        <p>Powered by <a href="https://jekyllrb.com/">Jekyll</a> & <a href="https://github.com/jekyll/minima">Minima</a> with my own customization. Hosted by <a href="https://pages.github.com/">Github Pages</a>.</p>
       </div>
     </div>
 
-    <div class="footer-col">
-      {{ site.copyright }} 
-      <p>Powered by <a href="https://jekyllrb.com/">Jekyll</a> & <a href="https://github.com/jekyll/minima">Minima</a> with my own customization. Hosted by <a href="https://pages.github.com/">Github Pages</a>.</p>
-    </div>
+ 
   </div>
 
 </footer>

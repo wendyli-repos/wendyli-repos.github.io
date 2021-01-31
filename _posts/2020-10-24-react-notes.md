@@ -3,8 +3,11 @@ title: "React Notes"
 date: 2020-10-24 14:21:03 +1100
 categories: React
 ---
-<!--excerpt.start--> 
-React is a front end web development library. This post is to record some notes of `React`.<!--excerpt.end--> 
+
+<!--excerpt.start-->
+
+React is a front end web development library. This post is to record some notes of `React`.<!--excerpt.end-->
+
 ## Browser compatibility
 
 ### Concepts
@@ -695,7 +698,7 @@ styling
 
 ```JSX
 // inline style
-<h1 style={{ color: 'red' }}>Hello world</h1>
+<h1>Hello world</h1>
 ```
 
 ```JSX
