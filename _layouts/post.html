@@ -2,65 +2,52 @@
 layout: default
 ---
 
-<article
-  class="post h-entry"
-  itemscope
-  itemtype="http://schema.org/BlogPosting"
->
-  <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">
-      {{ page.title | escape }}
-    </h1>
+<article class="post h-entry"  itemscope itemtype="http://schema.org/BlogPosting">
+<header class="post-header">
+  <h1 class="post-title p-name" itemprop="name headline">
+    {{ page.title | escape }}
+  </h1>
 
-    {% comment %} adding feature image to every post {% endcomment %} 
-    {% if page.image %}
-    <img src="{{- page.image | relative_url -}}" alt="" class="feature-image" />
-    {% else %} {% assign defaultImage = "/assets/images/default-image.jpg" %}
-    <img
-      src="{{- defaultImage | relative_url -}}"
-      alt=""
-      class="feature-image"
-    />
-    {% endif %}
+  {% comment %} adding feature image to every post 
+  {% if page.image %}
+  <img src="{{- page.image | relative_url -}}" alt="" class="feature-image" />
+  {% else %} {% assign defaultImage = "/assets/images/default-image.jpg" %}
+  <img
+    src="{{- defaultImage | relative_url -}}"
+    alt=""
+    class="feature-image"
+  />
+  {% endif %}
+{% endcomment %} 
+  <p class="post-meta">
+    <time
+      class="dt-published"
+      datetime="{{ page.date | date_to_xmlschema }}"
+      itemprop="datePublished"
+    >
+      {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y"
+      -%} {{ page.date | date: date_format }} •
+    </time>
+    {%- if page.author -%} •
+    <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <span class="p-author h-card" itemprop="name">{{ page.author }}</span>
+    </span>
+    {%- endif -%} {% comment %} Adding reading time {% endcomment %}
+    <span class="post-readingtime">
+      {% capture words %} {{ page.content | number_of_words | minus: 150 }} {%
+      endcapture %} {% if words contains "-" %} {% assign content_desc = "Only
+      indices" %} {{ content_desc }} {% else %} {% assign minutes = words |
+      plus: 150 | divided_by: 180 %} {{ minutes }} {% if minutes <= 1 %} {{"
+      minute read" }} {% else %} {{ " minutes read" }} {% endif %} {% endif %}
+    </span>
+  </p>
+</header>
 
-    <p class="post-meta">
-      <time
-        class="dt-published"
-        datetime="{{ page.date | date_to_xmlschema }}"
-        itemprop="datePublished"
-      >
-        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%} 
-        {{ page.date | date: date_format }} •
-      </time>
-      {%- if page.author -%} •
-      <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <span class="p-author h-card" itemprop="name">{{ page.author }}</span>
-      </span>
-      {%- endif -%} 
-      
-      {% comment %} Adding reading time {% endcomment %}
-      <span class="post-readingtime">
-        {% capture words %} 
-          {{ page.content | number_of_words | minus: 150 }} 
-        {% endcapture %} 
+<div class="post-content e-content" itemprop="articleBody">{{ content }}</div>
 
-        {% if words contains "-" %}
-        {% assign content_desc = "Only indices" %}
-          {{ content_desc }}
-        {% else %}
-        {% assign minutes = words | plus: 150 | divided_by: 180 %} 
-          {{ minutes }} 
-          {% if minutes <= 1 %} {{" minute read" }} 
-          {% else %} {{ " minutes read" }} 
-          {% endif %} 
-        {% endif %}
-      </span>
-    </p>
-  </header>
-
-  <div class="post-content e-content" itemprop="articleBody">{{ content }}</div>
-
-  {% comment %} adding previous and next post link, adding conditions {% endcomment %}
+  {% comment %} 
+  adding previous and next post link, adding conditions 
+  {% endcomment %}
   <div class="PageNavigation">
     {% if page.previous.url %}
     <a class="prev" href="{{page.previous.url}}"
@@ -76,8 +63,4 @@ layout: default
     <span class="next">No more newer posts.</span>
     {% endif %}
   </div>
-
-  <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
 </article>
-
-  

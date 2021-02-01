@@ -8,7 +8,7 @@ categories: Vercel
 
 A post to record the process to deploy a React project on Vercel. <!--excerpt.end-->
 
-First time deployment :
+First time deployment :  
 Step 1: Create a Vercel account.
 
 Step 2: Navigate to project folder, and run

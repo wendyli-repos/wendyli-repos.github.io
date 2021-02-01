@@ -1,11 +1,11 @@
 ---
 title: "Jekyll Notes"
-date: 2020-10-29 14:21:03 +1100
+date: 2020-10-29
 categories: Jekyll
-image: /assets/images/jekyll-logo-dark-solid.png
+# image: /assets/images/jekyll-logo-dark-solid.png
 ---
 <!--excerpt.start--> 
-A list of links of many jekyll tips that I found very helpful. <!--excerpt.end-->
+A list of links of jekyll tips that I found very helpful. <!--excerpt.end-->
 Clicking on the link will redirect you to external references. 
 
 1.  [adding pagination support](https://github.com/prashanthmadi/prashanthmadi.github.io/commit/d09b4351f0a8e34318847f14f854b5be2f06b4d6){:target="\_blank"}
