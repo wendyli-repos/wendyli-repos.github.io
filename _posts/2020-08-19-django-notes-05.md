@@ -1,7 +1,7 @@
 ---
 title: "Django Notes 05 - Views, Templates, 404 Errors, Urls"
 date: 2020-08-19
-categories: Django
+tags: django
 image: /assets/images/django-logo.png
 --- 
 

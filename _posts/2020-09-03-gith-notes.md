@@ -1,7 +1,7 @@
 ---
 title: "Git Notes"
 date: 2020-09-03
-categories: Git 
+tags: git 
 ---
 <!--excerpt.start-->
 A post to record my learning notes of a git. <!--excerpt.end-->

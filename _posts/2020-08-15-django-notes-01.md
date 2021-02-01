@@ -1,7 +1,7 @@
 ---
 title: "Django Notes 01 - Installing Django In Virtual Environment, Requirements.txt"
 date: 2020-08-15
-categories: Django
+tags: django
 image: /assets/images/python-venv.png
 ---
 

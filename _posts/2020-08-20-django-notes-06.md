@@ -1,7 +1,7 @@
 ---
 title: "Django Notes 06 - Forms, Generic Views"
 date: 2020-08-20
-categories: Django
+tags: django
 image: /assets/images/django-logo.png
 ---
 

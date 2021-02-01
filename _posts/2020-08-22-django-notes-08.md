@@ -1,7 +1,7 @@
 ---
 title: "Django Notes 08 - Adding static files"
 date: 2020-08-22
-categories: Django
+tags: django
 image: /assets/images/django-logo.png
 ---
 <!--excerpt.start-->

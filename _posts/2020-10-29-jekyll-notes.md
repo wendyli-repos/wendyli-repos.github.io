@@ -1,7 +1,7 @@
 ---
-title: "Jekyll Notes"
+title: "Jekyll Tips and Notes"
 date: 2020-10-29
-categories: Jekyll
+tags: jekyll
 # image: /assets/images/jekyll-logo-dark-solid.png
 ---
 <!--excerpt.start--> 

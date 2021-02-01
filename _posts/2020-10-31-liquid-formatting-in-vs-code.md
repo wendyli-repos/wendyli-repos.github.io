@@ -1,7 +1,7 @@
 ---
 title: "Formatting Liquid in VS Code"
 date: 2020-10-31 
-categories: VSCode, Jekyll
+tags: vscode jekyll
 ---
 
 I use VS Code as text editor to learn Javascript then I cannot escape from the fate to install the code formatter - Prettier. No doubt that Prettier is the opinionated formatter and made my begineer's JS coding experience very happy. You cannot deny that it is satisfying to see all codes neatly formatted.   

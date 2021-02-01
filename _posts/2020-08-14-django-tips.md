@@ -1,7 +1,7 @@
 ---
 title: "Django Tips"
 date: 2020-08-14
-categories: Django
+tags: django
 image: /assets/images/python-venv.png
 ---
 

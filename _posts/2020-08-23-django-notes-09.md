@@ -1,7 +1,7 @@
 ---
 title: "Django Notes 09 - Customize Admin Form"
 date: 2020-08-23
-categories: Django
+tags: django
 image: /assets/images/django-logo.png
 ---
 <!--excerpt.start-->

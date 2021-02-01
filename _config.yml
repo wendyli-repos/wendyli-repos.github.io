@@ -58,7 +58,7 @@ plugins:
 
 header_pages:
   - archieve.md
-  - categories.md
+  - tags.md
   - about.md
   - tools.md
 

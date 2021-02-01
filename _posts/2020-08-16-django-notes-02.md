@@ -1,7 +1,7 @@
 ---
 title: "Django Notes 02 - Django 'MVC"
 date: 2020-08-16
-categories: Django
+tags: django
 image: /assets/images/django-logo.png
 ---
 

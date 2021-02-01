@@ -196,13 +196,22 @@
 .post-meta {
   font-size: $small-font-size;
   color: $grey-color;
-  // color: hsl(0deg 0% 26%);
 }
 
 .post-link {
   display: block;
   @include relative-font-size(1.5);
 }
+
+.post-meta-tag {
+  color: $brand-color;
+}
+
+.site-tag {
+  display: inline;
+
+}
+
 
 /**
  * Posts

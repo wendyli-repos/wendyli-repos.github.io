@@ -9,36 +9,52 @@ layout: default
   </h1>
 
   {% comment %} adding feature image to every post 
-  {% if page.image %}
-  <img src="{{- page.image | relative_url -}}" alt="" class="feature-image" />
-  {% else %} {% assign defaultImage = "/assets/images/default-image.jpg" %}
-  <img
-    src="{{- defaultImage | relative_url -}}"
-    alt=""
-    class="feature-image"
-  />
-  {% endif %}
-{% endcomment %} 
+    {% if page.image %}
+    <img src="{{- page.image | relative_url -}}" alt="" class="feature-image" />
+    {% else %} {% assign defaultImage = "/assets/images/default-image.jpg" %}
+    <img
+      src="{{- defaultImage | relative_url -}}"
+      alt=""
+      class="feature-image"
+    />
+    {% endif %}
+  {% endcomment %} 
+
   <p class="post-meta">
     <time
       class="dt-published"
       datetime="{{ page.date | date_to_xmlschema }}"
       itemprop="datePublished"
     >
-      {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y"
-      -%} {{ page.date | date: date_format }} •
+    {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%} 
+    {{ page.date | date: date_format }} •
     </time>
-    {%- if page.author -%} •
-    <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <span class="p-author h-card" itemprop="name">{{ page.author }}</span>
-    </span>
-    {%- endif -%} {% comment %} Adding reading time {% endcomment %}
+    
+    {% comment %} Adding reading time {% endcomment %}
     <span class="post-readingtime">
-      {% capture words %} {{ page.content | number_of_words | minus: 150 }} {%
-      endcapture %} {% if words contains "-" %} {% assign content_desc = "Only
-      indices" %} {{ content_desc }} {% else %} {% assign minutes = words |
-      plus: 150 | divided_by: 180 %} {{ minutes }} {% if minutes <= 1 %} {{"
-      minute read" }} {% else %} {{ " minutes read" }} {% endif %} {% endif %}
+      {% capture words %} 
+      {{ page.content | number_of_words | minus: 150 }} 
+      {% endcapture %} 
+      {% if words contains "-" %} 
+        {% assign content_desc = "Only indices" %} 
+        {{ content_desc }} 
+      {% else %} 
+        {% assign minutes = words | plus: 150 | divided_by: 180 %} 
+        {{ minutes }} 
+          {% if minutes <= 1 %} 
+            {{ "minute read" }} 
+          {% else %} 
+            {{ " minutes read" }} 
+          {% endif %}
+      {% endif %}
+    </span> •
+
+    <span>
+      {% for tag in page.tags %}
+        <a href="/tag/{{ tag }}" class="post-meta-tag">
+          {{ tag }}  
+        </a>
+      {% endfor %}
     </span>
   </p>
 </header>
@@ -51,13 +67,13 @@ layout: default
   <div class="PageNavigation">
     {% if page.previous.url %}
     <a class="prev" href="{{page.previous.url}}"
-      >Previous Post: &laquo; {{page.previous.title}}</a
+      >Previous: &laquo; {{page.previous.title}}</a
     >
     {% else %}
     <span class="prev">No more older posts.</span>
     {% endif %} {% if page.next.url %}
     <a class="next" href="{{page.next.url}}"
-      >Next Post: {{page.next.title}} &raquo;</a
+      >Next: {{page.next.title}} &raquo;</a
     >
     {% else %}
     <span class="next">No more newer posts.</span>

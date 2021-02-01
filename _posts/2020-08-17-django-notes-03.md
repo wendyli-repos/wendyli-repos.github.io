@@ -1,7 +1,7 @@
 ---
 title: "Django Notes 03 - Creating a Django App"
 date: 2020-08-17
-categories: Django
+tags: django
 image: /assets/images/django-logo.png
 ---
 # Commands, Files, Packages and Functions 

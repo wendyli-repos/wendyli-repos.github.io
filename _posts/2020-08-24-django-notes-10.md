@@ -1,7 +1,7 @@
 ---
 title: "Django Notes 10 - Create A Python Package For Your App"
 date: 2020-08-24
-categories: Django
+tags: django
 image: /assets/images/django-logo.png
 ---
 <!--excerpt.start-->

@@ -1,7 +1,7 @@
 ---
 title: "Django Notes 07 - Automated Testing"
 date: 2020-08-21
-categories: Django
+tags: django
 image: /assets/images/django-logo.png
 --- 
 <!--excerpt.start-->

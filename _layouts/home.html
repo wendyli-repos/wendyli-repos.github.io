@@ -24,7 +24,7 @@ layout: default
       {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
       {%- for post in posts -%}
       <li>
-        <span class="post-meta">{{ post.date | date: date_format }} • &num; {{ post.categories[0] | upcase }} </span> 
+        <span class="post-meta">{{ post.date | date: date_format }} • &num; {{ post.tags | join:" " }} </span> 
         <h1>
           {{ post.title | escape }}
         </h1> 

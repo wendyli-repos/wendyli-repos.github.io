@@ -1,7 +1,7 @@
 ---
 title: "MAC OS Terminal"
 date: 2020-05-25
-categories: MACOS
+tags: macos
 ---
 
 

@@ -1,7 +1,7 @@
 ---
 title: "JavaScript Notes 01 - "
 date: 2020-06-01
-categories: Javascript
+tags: javascript
 ---
 <!--excerpt.start-->Javascript is probably the origin of Web Development. Here are some notes of JavaScript. <!--excerpt.end-->
 

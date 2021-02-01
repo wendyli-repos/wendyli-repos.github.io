@@ -1,7 +1,7 @@
 ---
 title: "React Errors - Unexpceted end of JSON input while parsing near..."
 date: 2020-05-24
-categories: REACT NPM
+tags: react npm
 ---
 
 <!--excerpt.start-->To record a error I encountered when running create-react-app. <!--excerpt.end-->

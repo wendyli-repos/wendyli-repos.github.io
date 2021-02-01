@@ -1,7 +1,7 @@
 ---
 title: "Blinkist - 365 Days Updates - Why started?"
 date: 2021-01-31
-categories: Blinkist
+tag: book blog
 image: /assets/images/blinkist-logo-01.png
 ---
 

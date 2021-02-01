@@ -1,7 +1,7 @@
 ---
 title: "Django Notes 11 - Deploy Django on Heroku"
 date: 2020-08-25
-categories: Django
+tags: django
 image: /assets/images/django-logo.png
 ---
 <!--excerpt.start-->

@@ -1,7 +1,7 @@
 ---
 title: "Markdown Notes"
 date: 2020-05-27
-categories: Markdown
+tags: markdown
 ---
 
 ## VS Code Features

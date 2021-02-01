@@ -1,7 +1,7 @@
 ---
 title: "Deploy React On Vercel"
 date: 2021-01-28
-categories: Vercel
+tags: vercel react deployment
 ---
 
 <!--excerpt.start-->

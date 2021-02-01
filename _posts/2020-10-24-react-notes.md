@@ -1,7 +1,7 @@
 ---
 title: "React Notes"
-date: 2020-10-24 14:21:03 +1100
-categories: React
+date: 2020-10-24 
+tags: react
 ---
 
 <!--excerpt.start-->

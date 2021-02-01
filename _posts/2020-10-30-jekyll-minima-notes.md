@@ -1,7 +1,7 @@
 ---
 title: "Anatomy of Jekyll Minina Theme"
 date: 2020-10-30 14:21:03 +1100
-categories: Jekyll
+tags: jekyll
 image: /assets/images/jekyll-logo-dark-solid.png
 ---
 <!--excerpt.start-->

@@ -1,7 +1,7 @@
 ---
 title: "VSCode Tips"
 date: 2020-05-26
-categories: VSCode
+tags: vscode
 ---
 
 

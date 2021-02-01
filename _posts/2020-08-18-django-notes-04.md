@@ -1,7 +1,7 @@
 ---
 title: "Django Notes 04 - setting.py File To Change Database, Timezone, Models, Admin"
 date: 2020-08-18
-categories: Django
+tags: django
 image: /assets/images/django-logo.png
 ---
 # Commands, Files, Packages and Functions 

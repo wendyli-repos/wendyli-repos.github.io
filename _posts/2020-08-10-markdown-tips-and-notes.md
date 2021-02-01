@@ -1,7 +1,7 @@
 ---
-title: "Markdown Tips"
+title: "Markdown Tips and Notes"
 date: 2020-08-10
-categories: Markdown
+tags: markdown
 ---
 
 <!--excerpt.start-->Some markdown tips that I found online.<!--excerpt.end-->
