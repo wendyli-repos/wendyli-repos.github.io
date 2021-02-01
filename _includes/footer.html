@@ -3,27 +3,25 @@
 
   <div class="wrapper">
     <div class="footer-col-wrapper">
-      <div class="footer-col">
-        <p class="feed-subscribe">
-          <a href="{{ 'feed.xml' | relative_url }}">
-            <svg class="svg-icon orange">
-              <use xlink:href="{{ 'assets/minima-social-icons.svg#rss' | relative_url }}"></use>
-            </svg><span>Subscribe</span>
-          </a>
-        </p>
-      <!-- {%- if site.author %}
-        <ul class="contact-list">
-          {% if site.author.name -%}
-            <li class="p-name">{{ site.author.name | escape }}</li>
-          {% endif -%}
-          {% if site.author.email -%}
-            <li><a class="u-email" href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></li>
-          {%- endif %}
-        </ul>
-      {%- endif %} -->
-      </div>
-
-      <form style="border:1px solid #ccc;padding:3px;text-align:center;" action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('https://feedburner.google.com/fb/a/mailverify?uri=GalaxywL', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true"><p>Enter your email address:</p><p><input type="text" style="width:140px" name="email"/></p><input type="hidden" value="GalaxywL" name="uri"/><input type="hidden" name="loc" value="en_US"/><input type="submit" value="Subscribe" /><p>Delivered by <a href="https://feedburner.google.com" target="_blank">FeedBurner</a></p></form>
+    <!-- subscript form -->
+      <!--  
+        <form class="subscribe-form"
+              action="https://feedburner.google.com/fb/a/mailverify" 
+              method="post" 
+              target="popupwindow" 
+              onsubmit="window.open('https://feedburner.google.com/fb/a/mailverify?uri=GalaxywL', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
+              <p>Join My Email List:</p>
+              <p>
+                <input type="text" style="width:140px" name="email"/>
+              </p>
+              <input type="hidden" value="GalaxywL" name="uri"/>
+              <input type="hidden" name="loc" value="en_US"/>
+              <input type="submit" value="Subscribe" />
+              <p>Delivered by <a href="https://feedburner.google.com" target="_blank">FeedBurner</a>
+              </p>
+        </form> 
+      -->
+  
 
       <!-- <div class="footer-col">
         <p>{{ site.description | escape }}</p>
@@ -33,17 +31,14 @@
         contact-list
       </div> -->
 
-      <div class="social-media-list">
-        {%- include social.html -%}
+      <div class="footer-col">
+        {%- include social-media-links.html -%}
       </div>
 
       <div class="footer-col">
         {{ site.copyright }} 
-        <p>Powered by <a href="https://jekyllrb.com/">Jekyll</a> & <a href="https://github.com/jekyll/minima">Minima</a> with my own customization. Hosted by <a href="https://pages.github.com/">Github Pages</a>.</p>
+        <p>Powered by <a href="https://jekyllrb.com/">Jekyll</a> & <a href="https://github.com/jekyll/minima">Minima</a> with customizations. Hosted by <a href="https://pages.github.com/">Github Pages</a>.</p>
       </div>
     </div>
-
- 
   </div>
-
 </footer>

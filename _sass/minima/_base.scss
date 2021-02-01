@@ -42,6 +42,8 @@ ul, ol, dl, figure,
 
 
 
+
+
 /**
  * `main` element
  */
@@ -104,6 +106,7 @@ h1, h2, h3, h4, h5, h6 {
  */
 a {
   color: $brand-color;
+  // color: hsl(214deg 76% 38%);
   text-decoration: none;
 
   &:visited {
@@ -217,13 +220,15 @@ pre {
     vertical-align: text-top;
 }
 
-.social-media-list {
-  li + li {
-    padding-top: 5px;
-  }
+
+.fa {
+  width: 16px;
+  height: 16px;
+  color: #{$grey-color};
+  display: inline-block;
+  padding-right: 5px;
+  vertical-align: text-top;
 }
-
-
 
 /**
  * Tables
@@ -252,3 +257,4 @@ table {
     border: 1px solid $grey-color-light;
   }
 }
+

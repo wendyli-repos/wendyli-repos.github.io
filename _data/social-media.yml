@@ -1,0 +1,23 @@
+email:
+  id: 'wendyleesydney@gmail.com'
+  href: 'mailto:'
+  title: 'Email'
+  fa-icon: 'fa-envelope-square fa-lg'
+
+github:
+  id: 'wendyli-repos'
+  href: 'https://github.com/'
+  title: 'GitHub'
+  fa-icon: 'fa-github-square fa-lg'
+
+linkedin:
+  id: 'yang-wendy-l-12899283/'
+  href: 'https://www.linkedin.com/in/'
+  title: 'Linkedin'
+  fa-icon: 'fa fa-linkedin-square fa-lg'
+
+subscribe:
+  id: ''
+  href: 'https://wendyli-repos.github.io/feed.xml'
+  title: 'Subscribe'
+  fa-icon: 'fa fa-rss-square fa-lg'

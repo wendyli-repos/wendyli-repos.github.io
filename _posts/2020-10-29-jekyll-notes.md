@@ -19,3 +19,7 @@ Clicking on the link will redirect you to external references.
 9. [HOW TO SHOW A SUMMARY OF YOUR POST WITH JEKYLL
 ](http://frontendcollisionblog.com/jekyll/snippet/2015/03/23/how-to-show-a-summary-of-your-post-with-jekyll.html){:target="\_blank"}
 10. [Customising the Excerpt Separators in Jekyll](https://cjshelton.github.io/blog/2019/05/27/customising-jekyll-excerpt-start.html){:target="\_blank"}
+11. [Including Social Media Icons on Jekyll through the use of Data Files](https://jreel.github.io/social-media-icons-on-jekyll/)c
+12. [How to add a newsletter to a Jekyll blog](https://medium.com/@davideiaiunese/the-problem-why-a-newsletter-baae4409a526){:target="\_blank"}  
+This method works but one Captcha window will popup, the user will need to click to confirm "I'm not a robot" to finish the subscription. I think it may over-complicated for my persoanl site, maybe worthwhile to add this feature to a company protfolio site. The captcha shown is like below:  
+![newsletter captcha screenshot](../assets/images/Newsletter captcha)

@@ -106,6 +106,7 @@
 .site-footer {
   border-top: 1px solid $grey-color-light;
   padding: $spacing-unit 0 0 0;
+  text-align:center;
 }
 
 .footer-heading {
@@ -127,7 +128,6 @@
 }
 
 .footer-col {
-  float: left;
   margin-bottom: $spacing-unit / 2;
   padding-left: $spacing-unit / 2;
 }
@@ -196,6 +196,7 @@
 .post-meta {
   font-size: $small-font-size;
   color: $grey-color;
+  // color: hsl(0deg 0% 26%);
 }
 
 .post-link {
@@ -294,3 +295,9 @@
 .PageNavigation .next {
   text-align: right;
 }
+
+.subscribe-form {
+  border:1px solid #ccc;
+  padding:3px;
+  text-align:center;
+} 
