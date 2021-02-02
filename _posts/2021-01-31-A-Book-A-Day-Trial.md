@@ -1,7 +1,7 @@
 ---
-title: "Blinkist - 365 Days Updates - Why started?"
+title: "A Book A Day Trial"
 date: 2021-01-31
-tag: book blog
+tag: book-review blog
 image: /assets/images/blinkist-logo-01.png
 ---
 

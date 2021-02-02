@@ -4,57 +4,98 @@ layout: default
 
 <div class="home">
   {%- if page.title -%}
-    <h1 class="page-heading">{{ page.title }}</h1>
+  <h1 class="page-heading">{{ page.title }}</h1>
   {%- endif -%} 
   
   {{ content }} 
   
+  <!-- assign posts varaible -->
   {%- if site.paginate -%} 
     {% assign posts = paginator.posts %} 
   {%- else -%} 
     {% assign posts = site.posts %} 
-  {%- endif -%} 
-  
+  {%- endif -%}
+
+  <!-- generate list of posts of a page -->
   {%- if posts.size > 0 -%} 
-    {%- if page.list_title -%}
-      <h2 class="post-list-heading">{{ page.list_title }}</h2>
-    {%- endif -%}
-  
     <ul class="post-list">
       {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
       {%- for post in posts -%}
       <li>
-        <span class="post-meta">{{ post.date | date: date_format }} • &num; {{ post.tags | join:" " }} </span> 
-        <h1>
-          {{ post.title | escape }}
-        </h1> 
-        {% comment %} Adding customized excerpt {% endcomment %}
+        <span class="post-meta">
+          {{ post.date | date: date_format }} • <span>&num; {{ post.tags | join:" " }}</span>
+        </span>
+
+        <h1><a class="next" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h1>
+
+        <!-- Adding customized excerpt -->
         <p class="post-excerpt">
-          {% if post.content contains '<!--excerpt.start-->' and post.content contains '<!--excerpt.end-->' %}
-            {% assign excerpt_start = post.content | split: '<!--excerpt.start-->' | last %}
-            {% assign excerpt_end = excerpt_start | split: '<!--excerpt.end-->' | first %}
-	          {{ excerpt_end | strip_html | truncatewords: 20 }}
-          {% else %}
-	          {{ post.content | strip_html | truncatewords: 20 }}
+          {% if post.content contains '<!--excerpt.start-->' and post.content
+          contains '<!--excerpt.end-->' %} 
+            {% assign excerpt_start = post.content | split: '<!--excerpt.start-->' | last %} 
+            {% assign excerpt_end = excerpt_start | split: '<!--excerpt.end-->' | first %} 
+            {{ excerpt_end | strip_html | truncatewords: 20 }} 
+          {% else %} 
+            {{ post.content | strip_html | truncatewords: 20 }} 
           {% endif %}
         </p>
-        <a class="next" href="{{ post.url | relative_url }}">&raquo; Read More</a>
       </li>
       {%- endfor -%}
     </ul>
+  {%- endif -%}
 
-    {% if site.paginate %}
-      <div class="pagination">
-    {% if paginator.previous_page %}
-      <a href="{{ paginator.previous_page_path }}" class="previous">&laquo; Newer Posts</a>
-    {% endif %}
-      <span class="page_number">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>
+  <!-- pagination  -->
+  {%- if site.paginate -%}
+    <div class="pagination">
+      <!-- 除homepage外，其他任何一个page都显示previous -->
+      {%- if paginator.previous_page -%}
+        <a class="previous" href="{{ paginator.previous_page_path }}" >
+          &laquo; Previous
+        </a>
 
-    {% if paginator.next_page %}
-      <a href="{{ paginator.next_page_path }}" class="next">Older Posts &raquo;</a>
-    {% endif %}
-      </div>
-    {% endif %}
+        
+        <span class="page_number">
+          {%- assign thirdlastpage = paginator.total_pages | minus:'1' -%}
+          {%- assign secondlastpage = paginator.total_pages | minus:'1'-%}
 
+          <!--  开始 -->
+          {%- assign temppagestarts = paginator.page | minus:'1' -%}
+          {%- if temppagestarts == 0 -%}
+            {%- assign temppagestarts = 1-%}
+          {%- endif -%}
+
+          <!-- 结束 -->
+          {%- assign temppageends = paginator.page | plus:'1' -%}
+          {%- if temppageends > paginator.total_pages -%}
+            {%- assign temppageends = paginator.total_pages -%}
+          {%- endif -%}          
+          
+          {%- for num in (temppagestarts .. temppageends) -%}
+
+            {%- if num == 1 -%}
+              <a class="previous" href="/">{{ num }}</a>
+            {%- elsif num <= 5 -%}
+              <a class="next" href="/blog/page/{{ num }}/">{{ num }}</a>  
+            {%- elsif num == paginator.page -%}
+              <a style="font-weight:bold;" class="next" href="/blog/page/{{ paginator.page }}/">{{ paginator.page }}</a>
+            {%- elsif num >= thirdlastpage and num <= secondlastpage -%}  
+              <a class="next" href="/blog/page/{{ num }}/">{{ num }}</a> 
+            {% else %}
+              <a class="next" href="/blog/page/{{ num }}/">{{ num }}</a> 
+            {%- endif -%}
+            {%- endfor -%}
+            <!-- <a class="next" href="/blog/page/{{ paginator.total_pages }}/">{{ paginator.total_pages }}</a>  -->
+        </span>
+
+
+        {%- if paginator.next_page -%}
+        <a class="next" href="{{ paginator.next_page_path }}">Next &raquo;</a>
+        {%- endif -%}
+
+      {%- else -%}
+      <!-- homepage 只显示more posts -->
+        <a class="next" href="/blog/page/2/">More Posts</a>
+      {%- endif -%}
+    </div>   
   {%- endif -%}
 </div>

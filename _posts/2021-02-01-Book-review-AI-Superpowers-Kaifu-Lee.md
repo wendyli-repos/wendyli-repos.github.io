@@ -1,7 +1,7 @@
 ---
-title: "Blinkist - AI Superpowers"
+title: "Book Review - AI Superpowers"
 date: 2021-02-01
-tags: ai book blog
+tags: ai book-review blog 
 image: /assets/images/20210201-AI-superpowers.jpg
 ---
 

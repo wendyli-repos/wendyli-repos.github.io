@@ -8,26 +8,34 @@ title: About
 
 welcome to my blog!
 
-Here, I keep notes<span>&#128394;</span> on learning IT stuff; also some brillant ideas<span>&#128161;</span> and awasome projects<span >&#x1F5A5;</span> .
+Here, I keep notes<span>&#128394;</span> of learning web development; also some ideas<span>&#128161;</span> and book reviews and projects<span >&#x1F5A5;</span> .
 
 # Before me
 
-7 years of working experience in all spacturum of Construction industry taught me one thing that techonology is the key for the future. Even for a traditional insudtry like Constrtion is starting to embrace tech in modeling, desiging, estimating and project managements and so on. 
+7 years of working experience in all spacturum of Construction Management inspired me that techonology is becoming the key for the future. Even for a traditional insudtry like Constrtion is embracing technology in modeling, desiging, estimating and project managements and so on. 
 
 # Now me
 I am learning Web Development to start my journey of a complete career change into IT industry. The most fascnitating thing I like about Web Development is that no need to download or install anything before I can present greate things.
 
-# Skillset
+# Skillsets
+## Core 
+* HTML5, CSS3, Javascript
+* SASS/ SCSS
+* Typescript
+* Python
 
-I am using
-{% assign categories_list = site.categories %}
-{%- for category in categories_list -%}
-<span style="display: inline-block; ">{{ category[0] }}, </span>
-{% endfor %}.
+## Frameworks and Libraries
+* React, learning Redux
+* Vue
+* Express
+* Django
+* Flask
+* NodeJS
+
 
 # Resume
 
 
 # About this blog
 
- You can find all sorce code [here](https://github.com/wendyli-repos/wendyli-repos.github.io).
+ This blog is a working progress.  You can find all sorce code [here](https://github.com/wendyli-repos/wendyli-repos.github.io).

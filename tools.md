@@ -4,7 +4,7 @@ title: Tools
 # permalink: /about/
 ---
 
-Some online tools:
+Some tools online that I found very helpful:
 
 # HTML
 

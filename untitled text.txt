@@ -1,0 +1,49 @@
+paginatation 
+
+	<div class="paginate-container mt-4 mt-md-8">
+				<nav class="paginate-container" aria-label="Pagination">
+        <div class="pagination">
+        <a class="previous_page" rel="previous" href="https://github.blog/" aria-label="Previous Page">Previous</a><a href="https://github.blog/" aria-label="Page 1">1
+        </a>
+        <em class="current selected" aria-current="true">2</em>
+        <a href="https://github.blog/page/3/" aria-label="Page 3">3</a>
+        <a href="https://github.blog/page/4/" aria-label="Page 4">4</a>
+        <span class="gap">…</span><a href="https://github.blog/page/273/" aria-label="Page 273">273</a>
+        <a class="next_page" rel="next" href="https://github.blog/page/3/" aria-label="Next Page">Next</a>
+        </div>
+        </nav>			
+        </div>
+
+		</div>
+
+
+
+style:
+pagination .current, .pagination .current:hover {
+    z-index: 3;
+    color: #fff;
+    background-color: #0366d6;
+    border-color: #0366d6;
+}
+.pagination .selected {
+    z-index: 3;
+}
+.pagination a, .pagination em, .pagination span {
+    position: relative;
+    float: left;
+    padding: 7px 12px;
+    margin-left: -1px;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 600;
+    color: #0366d6;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background: #fff;
+    border: 1px solid #e1e4e8;
+}
