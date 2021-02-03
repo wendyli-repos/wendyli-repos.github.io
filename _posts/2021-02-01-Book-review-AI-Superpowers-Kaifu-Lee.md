@@ -5,7 +5,7 @@ tags: ai book-review blog
 image: /assets/images/20210201-AI-superpowers.jpg
 ---
 
-Here is the synopsis from Blinkist:
+Synopsis from Blinkist:
 
 > AI Superpowers (2018) takes a revealing look at the US and China as the world stands at the precipice of the AI economy, a multi-trillion dollar industry of algorithms and automation. As a tech expert and venture capitalist with experience in both China and the US, author Kai-Fu Lee guides us through the past to discover how we got to where we are and what to expect in the future.  
 

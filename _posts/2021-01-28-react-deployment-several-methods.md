@@ -1,12 +1,12 @@
 ---
-title: "Deploy React On Vercel"
+title: "React Deployment - Several Methods"
 date: 2021-01-28
-tags: vercel react deployment
+tags: react deployment vercel heroku
 ---
 
 <!--excerpt.start-->
 
-A post to record the process to deploy a React project on Vercel. <!--excerpt.end-->
+A post to record the process to deploy a React project on Vercel. Working progress. <!--excerpt.end-->
 
 First time deployment :  
 Step 1: Create a Vercel account.

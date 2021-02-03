@@ -13,4 +13,8 @@ I will start a daily update of one book that I am interested in. I am planning t
 
 # The booklist to complete
 
-2021-02-01: AI Superpowers (2018) by Kai-fu LEE
+* 2021-02-01: AI Superpowers (2018) by Kai-fu LEE, finished by Chinese version audiobook
+* 2021-02-02: Human Compatible (2019) by Stuart J. Russell, finished by blinkist
+
+
+
