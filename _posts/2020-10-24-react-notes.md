@@ -12,7 +12,7 @@ React is a front end web development library. This post is to record some notes 
 
 ### Concepts
 
-- [caniuse.com](https://caniuse.com/)
+
 
 - Babel - A JavaScript library to convert ES6 to ES5
 
@@ -110,7 +110,7 @@ $ npm install babel-preset-env -D
 `-d` instructs Babel to write the transpiled code to a directory.
 `lib` indicates Babel writes the transpiled code to a directory called **lib**.
 
-1.8 Run `npm rub build` to transpile.  
+1.8 Run `npm run build` to transpile.  
 Folder strucutre after transpilation.
 
 ```

@@ -14,7 +14,12 @@ I will start a daily update of one book that I am interested in. I am planning t
 # The booklist to complete
 
 * 2021-02-01: AI Superpowers (2018) by Kai-fu LEE, finished by Chinese version audiobook
-* 2021-02-02: Human Compatible (2019) by Stuart J. Russell, finished by blinkist
+* 2021-02-02: Human Compatible (2019) by Stuart J. Russell
+* 2021-02-03: The Grid (2016) by Gretchen Bakke
+* 2021-02-04: The Economic Singularity: Artificial Intelligence and the death of capitalism (2016) by Calum Chace
+* 2021-02-05: Leadership by Algorithm: Who Leads and Who Follows in the AI Era? (2020) by David De Cremer
+* 2021-02-06: Architects of Intelligence: The Truth about AI from the People Building it (2016) by Martin Ford
+* 2021-02-07: Superhuman Innovation Transforming Business with Artificial Intelligence (2019) Chris Duffey
 
 
 

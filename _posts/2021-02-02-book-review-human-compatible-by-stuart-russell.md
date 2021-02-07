@@ -18,7 +18,7 @@ tags: ai book-review blog
 2. AI's ultimate goal is to satisfying human being's need. ( sounds a bit harsh to the rights of AI)
 3. Kaifu-Lee also mentioned UBI in his book AI Superpowers. 
 
-# Some sentenancs to learn:
+# Some sentenancs/ words to note:
 1. the threat becomes more dire.
 2. fixate on their feverish quest to realize the utopias of the future. 
 3. mitigate its more disastrous consequences
@@ -31,4 +31,7 @@ tags: ai book-review blog
 10. Infopocalypse
 11. a rosy picture
 12. burgeoning influence on society
+
+# Summary
+I feel like would like to read this book in the future. (***)
 

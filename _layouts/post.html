@@ -61,6 +61,7 @@ layout: default
 
 <div class="post-content e-content" itemprop="articleBody">{{ content }}</div>
 
+{% include disqus_comments.html %}
   {% comment %} 
   adding previous and next post link, adding conditions 
   {% endcomment %}
@@ -80,3 +81,4 @@ layout: default
     {% endif %}
   </div>
 </article>
+
