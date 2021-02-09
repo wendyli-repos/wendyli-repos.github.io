@@ -1,10 +1,9 @@
 ---
 layout: page
-title: Tools
-# permalink: /about/
+title: Toolbox
 ---
 
-Some tools online that I found very helpful:
+Some development tools online that I found very helpful:
 
 # HTML
 
@@ -15,20 +14,15 @@ Some tools online that I found very helpful:
 
 - [Bootswatch](https://bootswatch.com/)
 - [Fontawasome](https://fontawesome.com/account/cdn)
+- [semantic-ui](https://semantic-ui.com/introduction/getting-started.html)
 
 # JAVASCRIPT
 - [HTML5 Pattern](https://www.html5pattern.com/)  
 - [Input Pattern](https://input-pattern.com/en/index.php)
 
-# PYTHON
-
-# DJANGO
-
-# SQL
-
-# APIs
-- [Open Weather](https://openweathermap.org/)
-
 # Chrome Extension 
 - [Vue.js devtools](https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd/related?hl=en)
 - [JSONView](https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc)
+
+# APIs
+- [Open Weather](https://openweathermap.org/)

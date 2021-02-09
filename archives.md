@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Archieves
-permalink: /archieves/
+title: Archives
+permalink: /archives/
 ---
 <!-- List post by published date -->
 <!-- 
@@ -13,7 +13,7 @@ permalink: /archieves/
   {% endfor %}
 </ul> -->
 
-Total: {{ site.posts | size }} <a href="{{ site.base_url }}/archieves/">posts</a>: 
+<!-- Total: {{ site.posts | size }} <a href="{{ site.base_url }}/tags/">posts</a>:  -->
 
 ***
 

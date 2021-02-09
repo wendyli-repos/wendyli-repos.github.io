@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Tags
-permalink: /tags/
 ---
 Total {{ site.tags | size }} <a href="{{ site.base_url }}/tags/">tags</a>:
 

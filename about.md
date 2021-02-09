@@ -31,10 +31,6 @@ I am learning Web Development to start my journey of a complete career change in
 * Flask
 * NodeJS
 
-
-## Resume
-
-
 ## About this blog
 
  This blog is a working progress.  You can find all sorce code [here](https://github.com/wendyli-repos/wendyli-repos.github.io).
